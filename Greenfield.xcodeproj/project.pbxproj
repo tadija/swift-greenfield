@@ -1,0 +1,617 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B84D5FB29425AC8000232FA /* GreenfieldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D5FA29425AC8000232FA /* GreenfieldApp.swift */; };
+		8B84D5FD29425AC8000232FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D5FC29425AC8000232FA /* ContentView.swift */; };
+		8B84D5FF29425ACA000232FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B84D5FE29425ACA000232FA /* Assets.xcassets */; };
+		8B84D60329425ACA000232FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B84D60229425ACA000232FA /* Preview Assets.xcassets */; };
+		8B84D60D29425ACA000232FA /* GreenfieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D60C29425ACA000232FA /* GreenfieldTests.swift */; };
+		8B84D61729425ACA000232FA /* GreenfieldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D61629425ACA000232FA /* GreenfieldUITests.swift */; };
+		8B84D61929425ACA000232FA /* GreenfieldUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D61829425ACA000232FA /* GreenfieldUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8B84D60929425ACA000232FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B84D5EF29425AC8000232FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B84D5F629425AC8000232FA;
+			remoteInfo = Greenfield;
+		};
+		8B84D61329425ACA000232FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8B84D5EF29425AC8000232FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B84D5F629425AC8000232FA;
+			remoteInfo = Greenfield;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8B84D5F729425AC8000232FA /* Greenfield.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greenfield.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B84D5FA29425AC8000232FA /* GreenfieldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenfieldApp.swift; sourceTree = "<group>"; };
+		8B84D5FC29425AC8000232FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8B84D5FE29425ACA000232FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B84D60029425ACA000232FA /* Greenfield.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Greenfield.entitlements; sourceTree = "<group>"; };
+		8B84D60229425ACA000232FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8B84D60829425ACA000232FA /* GreenfieldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreenfieldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B84D60C29425ACA000232FA /* GreenfieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenfieldTests.swift; sourceTree = "<group>"; };
+		8B84D61229425ACA000232FA /* GreenfieldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreenfieldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B84D61629425ACA000232FA /* GreenfieldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenfieldUITests.swift; sourceTree = "<group>"; };
+		8B84D61829425ACA000232FA /* GreenfieldUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenfieldUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B84D5F429425AC8000232FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B84D60529425ACA000232FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B84D60F29425ACA000232FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8B84D5EE29425AC8000232FA = {
+			isa = PBXGroup;
+			children = (
+				8B84D5F929425AC8000232FA /* Greenfield */,
+				8B84D60B29425ACA000232FA /* GreenfieldTests */,
+				8B84D61529425ACA000232FA /* GreenfieldUITests */,
+				8B84D5F829425AC8000232FA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8B84D5F829425AC8000232FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B84D5F729425AC8000232FA /* Greenfield.app */,
+				8B84D60829425ACA000232FA /* GreenfieldTests.xctest */,
+				8B84D61229425ACA000232FA /* GreenfieldUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8B84D5F929425AC8000232FA /* Greenfield */ = {
+			isa = PBXGroup;
+			children = (
+				8B84D5FA29425AC8000232FA /* GreenfieldApp.swift */,
+				8B84D5FC29425AC8000232FA /* ContentView.swift */,
+				8B84D5FE29425ACA000232FA /* Assets.xcassets */,
+				8B84D60029425ACA000232FA /* Greenfield.entitlements */,
+				8B84D60129425ACA000232FA /* Preview Content */,
+			);
+			path = Greenfield;
+			sourceTree = "<group>";
+		};
+		8B84D60129425ACA000232FA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8B84D60229425ACA000232FA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8B84D60B29425ACA000232FA /* GreenfieldTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B84D60C29425ACA000232FA /* GreenfieldTests.swift */,
+			);
+			path = GreenfieldTests;
+			sourceTree = "<group>";
+		};
+		8B84D61529425ACA000232FA /* GreenfieldUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8B84D61629425ACA000232FA /* GreenfieldUITests.swift */,
+				8B84D61829425ACA000232FA /* GreenfieldUITestsLaunchTests.swift */,
+			);
+			path = GreenfieldUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8B84D5F629425AC8000232FA /* Greenfield */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B84D61C29425ACA000232FA /* Build configuration list for PBXNativeTarget "Greenfield" */;
+			buildPhases = (
+				8B84D5F329425AC8000232FA /* Sources */,
+				8B84D5F429425AC8000232FA /* Frameworks */,
+				8B84D5F529425AC8000232FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Greenfield;
+			productName = Greenfield;
+			productReference = 8B84D5F729425AC8000232FA /* Greenfield.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8B84D60729425ACA000232FA /* GreenfieldTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B84D61F29425ACA000232FA /* Build configuration list for PBXNativeTarget "GreenfieldTests" */;
+			buildPhases = (
+				8B84D60429425ACA000232FA /* Sources */,
+				8B84D60529425ACA000232FA /* Frameworks */,
+				8B84D60629425ACA000232FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B84D60A29425ACA000232FA /* PBXTargetDependency */,
+			);
+			name = GreenfieldTests;
+			productName = GreenfieldTests;
+			productReference = 8B84D60829425ACA000232FA /* GreenfieldTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8B84D61129425ACA000232FA /* GreenfieldUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B84D62229425ACA000232FA /* Build configuration list for PBXNativeTarget "GreenfieldUITests" */;
+			buildPhases = (
+				8B84D60E29425ACA000232FA /* Sources */,
+				8B84D60F29425ACA000232FA /* Frameworks */,
+				8B84D61029425ACA000232FA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B84D61429425ACA000232FA /* PBXTargetDependency */,
+			);
+			name = GreenfieldUITests;
+			productName = GreenfieldUITests;
+			productReference = 8B84D61229425ACA000232FA /* GreenfieldUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8B84D5EF29425AC8000232FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					8B84D5F629425AC8000232FA = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					8B84D60729425ACA000232FA = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 8B84D5F629425AC8000232FA;
+					};
+					8B84D61129425ACA000232FA = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 8B84D5F629425AC8000232FA;
+					};
+				};
+			};
+			buildConfigurationList = 8B84D5F229425AC8000232FA /* Build configuration list for PBXProject "Greenfield" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8B84D5EE29425AC8000232FA;
+			productRefGroup = 8B84D5F829425AC8000232FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8B84D5F629425AC8000232FA /* Greenfield */,
+				8B84D60729425ACA000232FA /* GreenfieldTests */,
+				8B84D61129425ACA000232FA /* GreenfieldUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8B84D5F529425AC8000232FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B84D60329425ACA000232FA /* Preview Assets.xcassets in Resources */,
+				8B84D5FF29425ACA000232FA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B84D60629425ACA000232FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B84D61029425ACA000232FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8B84D5F329425AC8000232FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B84D5FD29425AC8000232FA /* ContentView.swift in Sources */,
+				8B84D5FB29425AC8000232FA /* GreenfieldApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B84D60429425ACA000232FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B84D60D29425ACA000232FA /* GreenfieldTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B84D60E29425ACA000232FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B84D61729425ACA000232FA /* GreenfieldUITests.swift in Sources */,
+				8B84D61929425ACA000232FA /* GreenfieldUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8B84D60A29425ACA000232FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B84D5F629425AC8000232FA /* Greenfield */;
+			targetProxy = 8B84D60929425ACA000232FA /* PBXContainerItemProxy */;
+		};
+		8B84D61429425ACA000232FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B84D5F629425AC8000232FA /* Greenfield */;
+			targetProxy = 8B84D61329425ACA000232FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8B84D61A29425ACA000232FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8B84D61B29425ACA000232FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		8B84D61D29425ACA000232FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Greenfield/Greenfield.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Greenfield/Preview Content\"";
+				DEVELOPMENT_TEAM = KRJGWFRM84;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.Greenfield;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8B84D61E29425ACA000232FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Greenfield/Greenfield.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Greenfield/Preview Content\"";
+				DEVELOPMENT_TEAM = KRJGWFRM84;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.Greenfield;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8B84D62029425ACA000232FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KRJGWFRM84;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.GreenfieldTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Greenfield.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Greenfield";
+			};
+			name = Debug;
+		};
+		8B84D62129425ACA000232FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KRJGWFRM84;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.GreenfieldTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Greenfield.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Greenfield";
+			};
+			name = Release;
+		};
+		8B84D62329425ACA000232FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KRJGWFRM84;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.GreenfieldUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Greenfield;
+			};
+			name = Debug;
+		};
+		8B84D62429425ACA000232FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KRJGWFRM84;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.tadija.GreenfieldUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Greenfield;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8B84D5F229425AC8000232FA /* Build configuration list for PBXProject "Greenfield" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B84D61A29425ACA000232FA /* Debug */,
+				8B84D61B29425ACA000232FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B84D61C29425ACA000232FA /* Build configuration list for PBXNativeTarget "Greenfield" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B84D61D29425ACA000232FA /* Debug */,
+				8B84D61E29425ACA000232FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B84D61F29425ACA000232FA /* Build configuration list for PBXNativeTarget "GreenfieldTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B84D62029425ACA000232FA /* Debug */,
+				8B84D62129425ACA000232FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B84D62229425ACA000232FA /* Build configuration list for PBXNativeTarget "GreenfieldUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B84D62329425ACA000232FA /* Debug */,
+				8B84D62429425ACA000232FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8B84D5EF29425AC8000232FA /* Project object */;
+}
