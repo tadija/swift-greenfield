@@ -43,6 +43,7 @@
 		8B84D61229425ACA000232FA /* AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B84D61629425ACA000232FA /* AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUITests.swift; sourceTree = "<group>"; };
 		8B84D61829425ACA000232FA /* AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8B84D62829427A4B000232FA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +74,7 @@
 		8B84D5EE29425AC8000232FA = {
 			isa = PBXGroup;
 			children = (
+				8B84D62829427A4B000232FA /* README.md */,
 				8B84D625294263B3000232FA /* Resources */,
 				8B84D5F929425AC8000232FA /* App */,
 				8B84D60B29425ACA000232FA /* AppTests */,
