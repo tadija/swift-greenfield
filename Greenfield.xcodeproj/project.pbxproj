@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B84D5FB29425AC8000232FA /* GreenfieldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D5FA29425AC8000232FA /* GreenfieldApp.swift */; };
-		8B84D5FD29425AC8000232FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D5FC29425AC8000232FA /* ContentView.swift */; };
+		8B84D5FB29425AC8000232FA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D5FA29425AC8000232FA /* App.swift */; };
+		8B84D5FD29425AC8000232FA /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D5FC29425AC8000232FA /* AppView.swift */; };
 		8B84D5FF29425ACA000232FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B84D5FE29425ACA000232FA /* Assets.xcassets */; };
-		8B84D60329425ACA000232FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B84D60229425ACA000232FA /* Preview Assets.xcassets */; };
-		8B84D60D29425ACA000232FA /* GreenfieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D60C29425ACA000232FA /* GreenfieldTests.swift */; };
-		8B84D61729425ACA000232FA /* GreenfieldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D61629425ACA000232FA /* GreenfieldUITests.swift */; };
-		8B84D61929425ACA000232FA /* GreenfieldUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D61829425ACA000232FA /* GreenfieldUITestsLaunchTests.swift */; };
+		8B84D60D29425ACA000232FA /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D60C29425ACA000232FA /* AppTests.swift */; };
+		8B84D61729425ACA000232FA /* AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D61629425ACA000232FA /* AppUITests.swift */; };
+		8B84D61929425ACA000232FA /* AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D61829425ACA000232FA /* AppUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,17 +33,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8B84D5F729425AC8000232FA /* Greenfield.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greenfield.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B84D5FA29425AC8000232FA /* GreenfieldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenfieldApp.swift; sourceTree = "<group>"; };
-		8B84D5FC29425AC8000232FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8B84D5F729425AC8000232FA /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B84D5FA29425AC8000232FA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		8B84D5FC29425AC8000232FA /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		8B84D5FE29425ACA000232FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8B84D60029425ACA000232FA /* Greenfield.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Greenfield.entitlements; sourceTree = "<group>"; };
-		8B84D60229425ACA000232FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8B84D60829425ACA000232FA /* GreenfieldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreenfieldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B84D60C29425ACA000232FA /* GreenfieldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenfieldTests.swift; sourceTree = "<group>"; };
-		8B84D61229425ACA000232FA /* GreenfieldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreenfieldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B84D61629425ACA000232FA /* GreenfieldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenfieldUITests.swift; sourceTree = "<group>"; };
-		8B84D61829425ACA000232FA /* GreenfieldUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenfieldUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8B84D60029425ACA000232FA /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
+		8B84D60829425ACA000232FA /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B84D60C29425ACA000232FA /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
+		8B84D61229425ACA000232FA /* AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B84D61629425ACA000232FA /* AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUITests.swift; sourceTree = "<group>"; };
+		8B84D61829425ACA000232FA /* AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +73,10 @@
 		8B84D5EE29425AC8000232FA = {
 			isa = PBXGroup;
 			children = (
-				8B84D5F929425AC8000232FA /* Greenfield */,
-				8B84D60B29425ACA000232FA /* GreenfieldTests */,
-				8B84D61529425ACA000232FA /* GreenfieldUITests */,
+				8B84D625294263B3000232FA /* Resources */,
+				8B84D5F929425AC8000232FA /* App */,
+				8B84D60B29425ACA000232FA /* AppTests */,
+				8B84D61529425ACA000232FA /* AppUITests */,
 				8B84D5F829425AC8000232FA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,56 +84,62 @@
 		8B84D5F829425AC8000232FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8B84D5F729425AC8000232FA /* Greenfield.app */,
-				8B84D60829425ACA000232FA /* GreenfieldTests.xctest */,
-				8B84D61229425ACA000232FA /* GreenfieldUITests.xctest */,
+				8B84D5F729425AC8000232FA /* App.app */,
+				8B84D60829425ACA000232FA /* AppTests.xctest */,
+				8B84D61229425ACA000232FA /* AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8B84D5F929425AC8000232FA /* Greenfield */ = {
+		8B84D5F929425AC8000232FA /* App */ = {
 			isa = PBXGroup;
 			children = (
-				8B84D5FA29425AC8000232FA /* GreenfieldApp.swift */,
-				8B84D5FC29425AC8000232FA /* ContentView.swift */,
+				8B84D5FA29425AC8000232FA /* App.swift */,
+				8B84D5FC29425AC8000232FA /* AppView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8B84D60B29425ACA000232FA /* AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B84D60C29425ACA000232FA /* AppTests.swift */,
+			);
+			path = AppTests;
+			sourceTree = "<group>";
+		};
+		8B84D61529425ACA000232FA /* AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8B84D61629425ACA000232FA /* AppUITests.swift */,
+				8B84D61829425ACA000232FA /* AppUITestsLaunchTests.swift */,
+			);
+			path = AppUITests;
+			sourceTree = "<group>";
+		};
+		8B84D625294263B3000232FA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				8B84D5FE29425ACA000232FA /* Assets.xcassets */,
-				8B84D60029425ACA000232FA /* Greenfield.entitlements */,
-				8B84D60129425ACA000232FA /* Preview Content */,
+				8B84D62629426439000232FA /* Entitlements */,
 			);
-			path = Greenfield;
+			path = Resources;
 			sourceTree = "<group>";
 		};
-		8B84D60129425ACA000232FA /* Preview Content */ = {
+		8B84D62629426439000232FA /* Entitlements */ = {
 			isa = PBXGroup;
 			children = (
-				8B84D60229425ACA000232FA /* Preview Assets.xcassets */,
+				8B84D60029425ACA000232FA /* App.entitlements */,
 			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		8B84D60B29425ACA000232FA /* GreenfieldTests */ = {
-			isa = PBXGroup;
-			children = (
-				8B84D60C29425ACA000232FA /* GreenfieldTests.swift */,
-			);
-			path = GreenfieldTests;
-			sourceTree = "<group>";
-		};
-		8B84D61529425ACA000232FA /* GreenfieldUITests */ = {
-			isa = PBXGroup;
-			children = (
-				8B84D61629425ACA000232FA /* GreenfieldUITests.swift */,
-				8B84D61829425ACA000232FA /* GreenfieldUITestsLaunchTests.swift */,
-			);
-			path = GreenfieldUITests;
+			path = Entitlements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8B84D5F629425AC8000232FA /* Greenfield */ = {
+		8B84D5F629425AC8000232FA /* App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8B84D61C29425ACA000232FA /* Build configuration list for PBXNativeTarget "Greenfield" */;
+			buildConfigurationList = 8B84D61C29425ACA000232FA /* Build configuration list for PBXNativeTarget "App" */;
 			buildPhases = (
 				8B84D5F329425AC8000232FA /* Sources */,
 				8B84D5F429425AC8000232FA /* Frameworks */,
@@ -144,14 +149,14 @@
 			);
 			dependencies = (
 			);
-			name = Greenfield;
+			name = App;
 			productName = Greenfield;
-			productReference = 8B84D5F729425AC8000232FA /* Greenfield.app */;
+			productReference = 8B84D5F729425AC8000232FA /* App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8B84D60729425ACA000232FA /* GreenfieldTests */ = {
+		8B84D60729425ACA000232FA /* AppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8B84D61F29425ACA000232FA /* Build configuration list for PBXNativeTarget "GreenfieldTests" */;
+			buildConfigurationList = 8B84D61F29425ACA000232FA /* Build configuration list for PBXNativeTarget "AppTests" */;
 			buildPhases = (
 				8B84D60429425ACA000232FA /* Sources */,
 				8B84D60529425ACA000232FA /* Frameworks */,
@@ -162,14 +167,14 @@
 			dependencies = (
 				8B84D60A29425ACA000232FA /* PBXTargetDependency */,
 			);
-			name = GreenfieldTests;
+			name = AppTests;
 			productName = GreenfieldTests;
-			productReference = 8B84D60829425ACA000232FA /* GreenfieldTests.xctest */;
+			productReference = 8B84D60829425ACA000232FA /* AppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8B84D61129425ACA000232FA /* GreenfieldUITests */ = {
+		8B84D61129425ACA000232FA /* AppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8B84D62229425ACA000232FA /* Build configuration list for PBXNativeTarget "GreenfieldUITests" */;
+			buildConfigurationList = 8B84D62229425ACA000232FA /* Build configuration list for PBXNativeTarget "AppUITests" */;
 			buildPhases = (
 				8B84D60E29425ACA000232FA /* Sources */,
 				8B84D60F29425ACA000232FA /* Frameworks */,
@@ -180,9 +185,9 @@
 			dependencies = (
 				8B84D61429425ACA000232FA /* PBXTargetDependency */,
 			);
-			name = GreenfieldUITests;
+			name = AppUITests;
 			productName = GreenfieldUITests;
-			productReference = 8B84D61229425ACA000232FA /* GreenfieldUITests.xctest */;
+			productReference = 8B84D61229425ACA000232FA /* AppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -221,9 +226,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8B84D5F629425AC8000232FA /* Greenfield */,
-				8B84D60729425ACA000232FA /* GreenfieldTests */,
-				8B84D61129425ACA000232FA /* GreenfieldUITests */,
+				8B84D5F629425AC8000232FA /* App */,
+				8B84D60729425ACA000232FA /* AppTests */,
+				8B84D61129425ACA000232FA /* AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -233,7 +238,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B84D60329425ACA000232FA /* Preview Assets.xcassets in Resources */,
 				8B84D5FF29425ACA000232FA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,8 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B84D5FD29425AC8000232FA /* ContentView.swift in Sources */,
-				8B84D5FB29425AC8000232FA /* GreenfieldApp.swift in Sources */,
+				8B84D5FD29425AC8000232FA /* AppView.swift in Sources */,
+				8B84D5FB29425AC8000232FA /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B84D60D29425ACA000232FA /* GreenfieldTests.swift in Sources */,
+				8B84D60D29425ACA000232FA /* AppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B84D61729425ACA000232FA /* GreenfieldUITests.swift in Sources */,
-				8B84D61929425ACA000232FA /* GreenfieldUITestsLaunchTests.swift in Sources */,
+				8B84D61729425ACA000232FA /* AppUITests.swift in Sources */,
+				8B84D61929425ACA000232FA /* AppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,12 +290,12 @@
 /* Begin PBXTargetDependency section */
 		8B84D60A29425ACA000232FA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8B84D5F629425AC8000232FA /* Greenfield */;
+			target = 8B84D5F629425AC8000232FA /* App */;
 			targetProxy = 8B84D60929425ACA000232FA /* PBXContainerItemProxy */;
 		};
 		8B84D61429425ACA000232FA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8B84D5F629425AC8000232FA /* Greenfield */;
+			target = 8B84D5F629425AC8000232FA /* App */;
 			targetProxy = 8B84D61329425ACA000232FA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -411,10 +415,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Greenfield/Greenfield.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Resources/Entitlements/App.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Greenfield/Preview Content\"";
 				DEVELOPMENT_TEAM = KRJGWFRM84;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -449,10 +452,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Greenfield/Greenfield.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Resources/Entitlements/App.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Greenfield/Preview Content\"";
 				DEVELOPMENT_TEAM = KRJGWFRM84;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -584,7 +586,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8B84D61C29425ACA000232FA /* Build configuration list for PBXNativeTarget "Greenfield" */ = {
+		8B84D61C29425ACA000232FA /* Build configuration list for PBXNativeTarget "App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8B84D61D29425ACA000232FA /* Debug */,
@@ -593,7 +595,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8B84D61F29425ACA000232FA /* Build configuration list for PBXNativeTarget "GreenfieldTests" */ = {
+		8B84D61F29425ACA000232FA /* Build configuration list for PBXNativeTarget "AppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8B84D62029425ACA000232FA /* Debug */,
@@ -602,7 +604,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8B84D62229425ACA000232FA /* Build configuration list for PBXNativeTarget "GreenfieldUITests" */ = {
+		8B84D62229425ACA000232FA /* Build configuration list for PBXNativeTarget "AppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8B84D62329425ACA000232FA /* Debug */,

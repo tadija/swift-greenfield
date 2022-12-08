@@ -1,13 +1,6 @@
-//
-//  GreenfieldUITestsLaunchTests.swift
-//  GreenfieldUITests
-//
-//  Created by Marko Tadić on 8.12.22..
-//
-
 import XCTest
 
-final class GreenfieldUITestsLaunchTests: XCTestCase {
+final class AppUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
