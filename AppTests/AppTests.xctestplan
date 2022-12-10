@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "E61D5065-0230-4A22-9447-8892A44244D9",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Greenfield.xcodeproj",
+        "identifier" : "8B84D60729425ACA000232FA",
+        "name" : "AppTests"
+      }
+    }
+  ],
+  "version" : 1
+}

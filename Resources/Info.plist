@@ -4,7 +4,7 @@
 <dict>
 	<key>Config</key>
 	<dict>
-		<key>BuildConfiguration</key>
+		<key>Env</key>
 		<string>$(CONFIGURATION)</string>
 	</dict>
 </dict>

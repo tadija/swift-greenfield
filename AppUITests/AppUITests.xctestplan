@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "E5AE5BF0-9EB2-4F41-A668-897F4450D334",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "skippedTests" : [
+        "AppLaunchTests\/testLaunchPerformance()",
+      ],
+      "target" : {
+        "containerPath" : "container:Greenfield.xcodeproj",
+        "identifier" : "8B84D61129425ACA000232FA",
+        "name" : "AppUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
