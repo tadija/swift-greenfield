@@ -9,4 +9,6 @@ DD_PATH=$(
     | rev | cut -d'/' -f4- | rev
 )
 
+echo "removing directory at path: $DD_PATH"
+
 rm -rf "$DD_PATH"

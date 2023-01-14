@@ -19,5 +19,5 @@ bump-version: ## usage: v=1.1 make bump-version
 clear-dd: ## clear derived data
 	@$(SCRIPTS)/clear-derived-data.sh
 
-rename: ## rename project
+rename-proj: ## rename project
 	@$(SCRIPTS)/rename-xcodeproj.sh

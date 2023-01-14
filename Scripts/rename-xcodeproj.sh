@@ -10,7 +10,7 @@ function renameProject {
     read NEW_PROJECT_NAME
 
     # download rename script and make it executable
-    URL="https://raw.githubusercontent.com/appculture/xcode-project-renamer/master/Sources/main.swift"
+    URL="https://raw.githubusercontent.com/tadija/xcode-project-renamer/master/Sources/main.swift"
     curl $URL -o rename.swift && chmod +x rename.swift
 
     # rename project from old name to new name
