@@ -10,8 +10,10 @@
 		8B13FAF82958D17B00081389 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13FAF72958D17B00081389 /* Widgets.swift */; };
 		8B13FAFA2958D17B00081389 /* ExampleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13FAF92958D17B00081389 /* ExampleWidget.swift */; };
 		8B13FAFC2958D17C00081389 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B13FAFB2958D17C00081389 /* Assets.xcassets */; };
-		8B13FB002958D17C00081389 /* GreenfieldWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8B13FAF02958D17B00081389 /* GreenfieldWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8B13FB002958D17C00081389 /* GreenfieldWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8B13FAF02958D17B00081389 /* GreenfieldWidgets.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8B13FB082958D5B600081389 /* ExampleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13FB072958D5B600081389 /* ExampleProvider.swift */; };
+		8B6D149F297C59FB002DE967 /* Common in Frameworks */ = {isa = PBXBuildFile; productRef = 8B6D149E297C59FB002DE967 /* Common */; };
+		8B6D14A1297C5A09002DE967 /* Common in Frameworks */ = {isa = PBXBuildFile; productRef = 8B6D14A0297C5A09002DE967 /* Common */; };
 		8B84D5FB29425AC8000232FA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D5FA29425AC8000232FA /* App.swift */; };
 		8B84D5FD29425AC8000232FA /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D5FC29425AC8000232FA /* AppView.swift */; };
 		8B84D5FF29425ACA000232FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B84D5FE29425ACA000232FA /* Assets.xcassets */; };
@@ -65,6 +67,7 @@
 		8B13FAFB2958D17C00081389 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B13FAFD2958D17C00081389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B13FB072958D5B600081389 /* ExampleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleProvider.swift; sourceTree = "<group>"; };
+		8B7F753729741214003D44A2 /* SharedKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SharedKit; sourceTree = "<group>"; };
 		8B84D5F729425AC8000232FA /* Greenfield.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greenfield.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B84D5FA29425AC8000232FA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		8B84D5FC29425AC8000232FA /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -83,9 +86,9 @@
 		8BB78F5D2944DAC800C9B014 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		8BB78F602944EC8600C9B014 /* AppTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = AppTests.xctestplan; path = AppTests/AppTests.xctestplan; sourceTree = SOURCE_ROOT; };
 		8BB78F702944F0D900C9B014 /* AppUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = AppUITests.xctestplan; sourceTree = "<group>"; };
-		8BB78F712945073900C9B014 /* env-common.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "env-common.sh"; sourceTree = "<group>"; };
+		8BB78F712945073900C9B014 /* config-env-shared.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "config-env-shared.sh"; sourceTree = "<group>"; };
 		8BB78F72294507BD00C9B014 /* rename-xcodeproj.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "rename-xcodeproj.sh"; sourceTree = "<group>"; };
-		8BB78F7329450C3200C9B014 /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		8BB78F7329450C3200C9B014 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		8BDE00AB2957A4C600A87EE2 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		8BDE00AC2957AD3F00A87EE2 /* clear-derived-data.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "clear-derived-data.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B6D149F297C59FB002DE967 /* Common in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B6D14A1297C5A09002DE967 /* Common in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				8B84D62829427A4B000232FA /* README.md */,
+				8B7F753729741214003D44A2 /* SharedKit */,
 				8B84D6382944D837000232FA /* Config */,
 				8B84D5F929425AC8000232FA /* App */,
 				8B84D60B29425ACA000232FA /* AppTests */,
@@ -227,7 +233,7 @@
 		8B84D62929427D2F000232FA /* Env */ = {
 			isa = PBXGroup;
 			children = (
-				8BB78F7329450C3200C9B014 /* Common.xcconfig */,
+				8BB78F7329450C3200C9B014 /* Shared.xcconfig */,
 				8B84D62A29427D50000232FA /* Dev.xcconfig */,
 				8B84D62B29427D58000232FA /* Live.xcconfig */,
 			);
@@ -254,8 +260,8 @@
 		8BB78F5E2944DAF500C9B014 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
-				8BB78F712945073900C9B014 /* env-common.sh */,
 				8BDE00AC2957AD3F00A87EE2 /* clear-derived-data.sh */,
+				8BB78F712945073900C9B014 /* config-env-shared.sh */,
 				8BB78F72294507BD00C9B014 /* rename-xcodeproj.sh */,
 			);
 			path = Scripts;
@@ -264,9 +270,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8B13FAEF2958D17B00081389 /* WidgetsExtension */ = {
+		8B13FAEF2958D17B00081389 /* Widgets */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8B13FB062958D17C00081389 /* Build configuration list for PBXNativeTarget "WidgetsExtension" */;
+			buildConfigurationList = 8B13FB062958D17C00081389 /* Build configuration list for PBXNativeTarget "Widgets" */;
 			buildPhases = (
 				8B13FAEC2958D17B00081389 /* Sources */,
 				8B13FAED2958D17B00081389 /* Frameworks */,
@@ -276,7 +282,10 @@
 			);
 			dependencies = (
 			);
-			name = WidgetsExtension;
+			name = Widgets;
+			packageProductDependencies = (
+				8B6D149E297C59FB002DE967 /* Common */,
+			);
 			productName = WidgetsExtension;
 			productReference = 8B13FAF02958D17B00081389 /* GreenfieldWidgets.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -296,6 +305,9 @@
 				8B13FAFF2958D17C00081389 /* PBXTargetDependency */,
 			);
 			name = App;
+			packageProductDependencies = (
+				8B6D14A0297C5A09002DE967 /* Common */,
+			);
 			productName = Greenfield;
 			productReference = 8B84D5F729425AC8000232FA /* Greenfield.app */;
 			productType = "com.apple.product-type.application";
@@ -378,7 +390,7 @@
 				8B84D5F629425AC8000232FA /* App */,
 				8B84D60729425ACA000232FA /* AppTests */,
 				8B84D61129425ACA000232FA /* AppUITests */,
-				8B13FAEF2958D17B00081389 /* WidgetsExtension */,
+				8B13FAEF2958D17B00081389 /* Widgets */,
 			);
 		};
 /* End PBXProject section */
@@ -458,7 +470,8 @@
 /* Begin PBXTargetDependency section */
 		8B13FAFF2958D17C00081389 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8B13FAEF2958D17B00081389 /* WidgetsExtension */;
+			platformFilter = ios;
+			target = 8B13FAEF2958D17B00081389 /* Widgets */;
 			targetProxy = 8B13FAFE2958D17C00081389 /* PBXContainerItemProxy */;
 		};
 		8B84D60A29425ACA000232FA /* PBXTargetDependency */ = {
@@ -1003,7 +1016,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/$(DisplayName).app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/$(DisplayName)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Greenfield.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Greenfield";
 			};
 			name = "Debug-Live";
 		};
@@ -1023,7 +1036,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/$(DisplayName).app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/$(DisplayName)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Greenfield.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Greenfield";
 			};
 			name = "Release-Live";
 		};
@@ -1185,7 +1198,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/$(DisplayName).app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/$(DisplayName)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Greenfield.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Greenfield";
 			};
 			name = "Debug-Dev";
 		};
@@ -1320,7 +1333,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/$(DisplayName).app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/$(DisplayName)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Greenfield.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Greenfield";
 			};
 			name = "Release-Dev";
 		};
@@ -1347,7 +1360,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8B13FB062958D17C00081389 /* Build configuration list for PBXNativeTarget "WidgetsExtension" */ = {
+		8B13FB062958D17C00081389 /* Build configuration list for PBXNativeTarget "Widgets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8B13FB022958D17C00081389 /* Debug-Live */,
@@ -1403,6 +1416,17 @@
 			defaultConfigurationName = "Release-Live";
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B6D149E297C59FB002DE967 /* Common */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Common;
+		};
+		8B6D14A0297C5A09002DE967 /* Common */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Common;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8B84D5EF29425AC8000232FA /* Project object */;
 }

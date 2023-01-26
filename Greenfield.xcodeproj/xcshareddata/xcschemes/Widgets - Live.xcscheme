@@ -17,7 +17,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8B13FAEF2958D17B00081389"
                BuildableName = "GreenfieldWidgets.appex"
-               BlueprintName = "WidgetsExtension"
+               BlueprintName = "Widgets"
                ReferencedContainer = "container:Greenfield.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -64,7 +64,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8B13FAEF2958D17B00081389"
             BuildableName = "GreenfieldWidgets.appex"
-            BlueprintName = "WidgetsExtension"
+            BlueprintName = "Widgets"
             ReferencedContainer = "container:Greenfield.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>

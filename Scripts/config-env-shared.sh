@@ -1,18 +1,18 @@
 #!/bin/sh
 
-FILE="Config/Env/Common.xcconfig"
+FILE="Config/Env/Shared.xcconfig"
 CMD="$1"
 KEY="$2"
 VALUE="$3"
 
 function printUsage {
-    echo "USAGE:\n- get \$KEY\n- set \$KEY \$VALUE"
+    echo "ℹ️  USAGE:\n- get \$KEY\n- set \$KEY \$VALUE"
 }
 
 function getValueForKey {
     RESULT=$(cat $FILE | grep "$KEY " | cut -d "=" -f2 | xargs)
     if [ -z $RESULT ]
-        then echo "key not found: $KEY"
+        then echo "⚠️  key not found: $KEY"
         else echo $RESULT
     fi
 }
