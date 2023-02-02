@@ -1,4 +1,5 @@
 import SwiftUI
+import Common
 
 struct AppView: View {
     var body: some View {
@@ -6,7 +7,9 @@ struct AppView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+
+            Text(env.customDescription)
+                .padding()
         }
         .padding()
     }

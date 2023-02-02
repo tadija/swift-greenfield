@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "aekit",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:tadija/AEKit.git",
+      "state" : {
+        "revision" : "f54c721883d8141d912fb22694c0b0e0829121c0",
+        "version" : "0.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}

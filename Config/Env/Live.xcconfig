@@ -2,5 +2,6 @@
 
 EnvID = Live
 
-BundleID = live.greenfield
+TeamID = VL46Q749LJ
+BaseBundleID = live.greenfield
 DisplayName = Greenfield

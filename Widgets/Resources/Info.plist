@@ -4,8 +4,10 @@
 <dict>
 	<key>Config</key>
 	<dict>
-		<key>Env</key>
+		<key>buildConfiguration</key>
 		<string>$(CONFIGURATION)</string>
+		<key>envID</key>
+		<string>$(EnvID)</string>
 	</dict>
 	<key>NSExtension</key>
 	<dict>

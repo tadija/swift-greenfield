@@ -2,5 +2,6 @@
 
 EnvID = Dev
 
-BundleID = dev.greenfield
+TeamID = VL46Q749LJ
+BaseBundleID = dev.greenfield
 DisplayName = Greenfield.Dev
