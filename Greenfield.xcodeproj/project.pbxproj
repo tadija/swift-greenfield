@@ -89,6 +89,7 @@
 		8BB78F712945073900C9B014 /* config-env-shared.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "config-env-shared.sh"; sourceTree = "<group>"; };
 		8BB78F72294507BD00C9B014 /* rename-xcodeproj.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "rename-xcodeproj.sh"; sourceTree = "<group>"; };
 		8BB78F7329450C3200C9B014 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
+		8BC9B4F929D4FB8800994F78 /* bootstrap.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bootstrap.sh; sourceTree = "<group>"; };
 		8BDE00AB2957A4C600A87EE2 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		8BDE00AC2957AD3F00A87EE2 /* clear-derived-data.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "clear-derived-data.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -261,6 +262,7 @@
 		8BB78F5E2944DAF500C9B014 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
+				8BC9B4F929D4FB8800994F78 /* bootstrap.sh */,
 				8BDE00AC2957AD3F00A87EE2 /* clear-derived-data.sh */,
 				8BB78F712945073900C9B014 /* config-env-shared.sh */,
 				8BB78F72294507BD00C9B014 /* rename-xcodeproj.sh */,

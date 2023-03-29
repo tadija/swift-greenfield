@@ -4,10 +4,15 @@
 XCODE_PROJECT=$(find . -maxdepth 1 -name "*.xcodeproj" | head -1)
 OLD_PROJECT_NAME=$(basename "${XCODE_PROJECT%.*}")
 
+# get new project name as optional parameter
+NEW_PROJECT_NAME="$1"
+
 function renameProject {
-    # input new project name
-    echo "enter new project name:"
-    read NEW_PROJECT_NAME
+    # if not provided, input new project name
+    if [ -z $NEW_PROJECT_NAME ]
+        then echo "enter new project name:"
+        read NEW_PROJECT_NAME
+    fi
 
     # download rename script and make it executable
     URL="https://raw.githubusercontent.com/tadija/xcode-project-renamer/master/Sources/main.swift"
