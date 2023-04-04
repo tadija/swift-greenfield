@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1420"
-   version = "1.7">
+   version = "2.1">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -9,16 +9,12 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8B84D5F629425AC8000232FA"
-               BuildableName = "Greenfield.app"
-               BlueprintName = "App"
-               ReferencedContainer = "container:Greenfield.xcodeproj">
-            </BuildableReference>
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <TestPlanReference
+               reference = "container:AppUITests/AppUITests.xctestplan">
+            </TestPlanReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
@@ -29,7 +25,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:AppTests/AppTests.xctestplan"
+            reference = "container:AppUITests/AppUITests.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
@@ -44,16 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8B84D5F629425AC8000232FA"
-            BuildableName = "Greenfield.app"
-            BlueprintName = "App"
-            ReferencedContainer = "container:Greenfield.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release-Dev"
@@ -61,16 +47,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8B84D5F629425AC8000232FA"
-            BuildableName = "Greenfield.app"
-            BlueprintName = "App"
-            ReferencedContainer = "container:Greenfield.xcodeproj">
+            BlueprintIdentifier = "8B84D61129425ACA000232FA"
+            BuildableName = "AppUITests.xctest"
+            BlueprintName = "AppUITests"
+            ReferencedContainer = "container:GreenField.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug-Dev">

@@ -4,7 +4,7 @@ PROJECT_NAME="$1"
 
 function bootstrap {
     echo ""
-    echo "greenfield bootstrap running 🚧"
+    echo "GreenField bootstrap running 🚧"
     echo ""
 
     git clone git@github.com:tadija/greenfield.git $PROJECT_NAME
@@ -16,10 +16,10 @@ function bootstrap {
     git init
 
     git add .
-    git commit -m "Init greenfield project: \"$PROJECT_NAME\""
+    git commit -m "Init project: \"$PROJECT_NAME\""
 
     echo ""
-    echo "greenfield bootstrap done ✅"
+    echo "GreenField bootstrap done ✅"
     echo ""
 }
 

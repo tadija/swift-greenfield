@@ -1,9 +1,13 @@
-# Greenfield
+# GreenField
 
-This project may be used as a template for any "greenfield" project.
+> File / New Startup
 
 ## Bootstrap
 
 ```sh
-curl "https://raw.githubusercontent.com/tadija/greenfield/main/Scripts/bootstrap.sh" | bash -s "YourProjectName"
+curl "https://tinyurl.com/greenfield-bootstrap" | bash -s "CatchyName"
 ```
+
+---
+
+`done for fun`

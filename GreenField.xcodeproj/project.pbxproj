@@ -10,8 +10,9 @@
 		8B13FAF82958D17B00081389 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13FAF72958D17B00081389 /* Widgets.swift */; };
 		8B13FAFA2958D17B00081389 /* ExampleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13FAF92958D17B00081389 /* ExampleWidget.swift */; };
 		8B13FAFC2958D17C00081389 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B13FAFB2958D17C00081389 /* Assets.xcassets */; };
-		8B13FB002958D17C00081389 /* GreenfieldWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8B13FAF02958D17B00081389 /* GreenfieldWidgets.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8B13FB002958D17C00081389 /* GreenFieldWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8B13FAF02958D17B00081389 /* GreenFieldWidgets.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8B13FB082958D5B600081389 /* ExampleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13FB072958D5B600081389 /* ExampleProvider.swift */; };
+		8B47181529DE327B009ED534 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B47181729DE327B009ED534 /* Localizable.strings */; };
 		8B6D149F297C59FB002DE967 /* Common in Frameworks */ = {isa = PBXBuildFile; productRef = 8B6D149E297C59FB002DE967 /* Common */; };
 		8B6D14A1297C5A09002DE967 /* Common in Frameworks */ = {isa = PBXBuildFile; productRef = 8B6D14A0297C5A09002DE967 /* Common */; };
 		8B84D5FB29425AC8000232FA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D5FA29425AC8000232FA /* App.swift */; };
@@ -35,14 +36,14 @@
 			containerPortal = 8B84D5EF29425AC8000232FA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8B84D5F629425AC8000232FA;
-			remoteInfo = Greenfield;
+			remoteInfo = GreenField;
 		};
 		8B84D61329425ACA000232FA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8B84D5EF29425AC8000232FA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8B84D5F629425AC8000232FA;
-			remoteInfo = Greenfield;
+			remoteInfo = GreenField;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -53,7 +54,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				8B13FB002958D17C00081389 /* GreenfieldWidgets.appex in Embed Foundation Extensions */,
+				8B13FB002958D17C00081389 /* GreenFieldWidgets.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,14 +62,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8B13FAF02958D17B00081389 /* GreenfieldWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GreenfieldWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B13FAF02958D17B00081389 /* GreenFieldWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GreenFieldWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B13FAF72958D17B00081389 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
 		8B13FAF92958D17B00081389 /* ExampleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleWidget.swift; sourceTree = "<group>"; };
 		8B13FAFB2958D17C00081389 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B13FAFD2958D17C00081389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B13FB072958D5B600081389 /* ExampleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleProvider.swift; sourceTree = "<group>"; };
+		8B47181229DCCF52009ED534 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		8B47181629DE327B009ED534 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B7F753729741214003D44A2 /* SharedKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SharedKit; sourceTree = "<group>"; };
-		8B84D5F729425AC8000232FA /* Greenfield.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greenfield.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B84D5F729425AC8000232FA /* GreenField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B84D5FA29425AC8000232FA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		8B84D5FC29425AC8000232FA /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		8B84D5FE29425ACA000232FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -177,6 +180,7 @@
 				8B13FAF62958D17B00081389 /* Widgets */,
 				8BB78F5E2944DAF500C9B014 /* Scripts */,
 				8BDE00AB2957A4C600A87EE2 /* Makefile */,
+				8B47181229DCCF52009ED534 /* CHANGELOG.md */,
 				8B84D5F829425AC8000232FA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -184,10 +188,10 @@
 		8B84D5F829425AC8000232FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8B84D5F729425AC8000232FA /* Greenfield.app */,
+				8B84D5F729425AC8000232FA /* GreenField.app */,
 				8B84D60829425ACA000232FA /* AppTests.xctest */,
 				8B84D61229425ACA000232FA /* AppUITests.xctest */,
-				8B13FAF02958D17B00081389 /* GreenfieldWidgets.appex */,
+				8B13FAF02958D17B00081389 /* GreenFieldWidgets.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,9 +228,10 @@
 		8B84D625294263B3000232FA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8B84D5FE29425ACA000232FA /* Assets.xcassets */,
-				8B84D62C29427F06000232FA /* Info.plist */,
 				8B84D62629426439000232FA /* Entitlements */,
+				8B84D62C29427F06000232FA /* Info.plist */,
+				8B84D5FE29425ACA000232FA /* Assets.xcassets */,
+				8B47181729DE327B009ED534 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -290,7 +295,7 @@
 				8B6D149E297C59FB002DE967 /* Common */,
 			);
 			productName = WidgetsExtension;
-			productReference = 8B13FAF02958D17B00081389 /* GreenfieldWidgets.appex */;
+			productReference = 8B13FAF02958D17B00081389 /* GreenFieldWidgets.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		8B84D5F629425AC8000232FA /* App */ = {
@@ -311,8 +316,8 @@
 			packageProductDependencies = (
 				8B6D14A0297C5A09002DE967 /* Common */,
 			);
-			productName = Greenfield;
-			productReference = 8B84D5F729425AC8000232FA /* Greenfield.app */;
+			productName = GreenField;
+			productReference = 8B84D5F729425AC8000232FA /* GreenField.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8B84D60729425ACA000232FA /* AppTests */ = {
@@ -329,7 +334,7 @@
 				8B84D60A29425ACA000232FA /* PBXTargetDependency */,
 			);
 			name = AppTests;
-			productName = GreenfieldTests;
+			productName = GreenFieldTests;
 			productReference = 8B84D60829425ACA000232FA /* AppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -347,7 +352,7 @@
 				8B84D61429425ACA000232FA /* PBXTargetDependency */,
 			);
 			name = AppUITests;
-			productName = GreenfieldUITests;
+			productName = GreenFieldUITests;
 			productReference = 8B84D61229425ACA000232FA /* AppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -377,7 +382,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8B84D5F229425AC8000232FA /* Build configuration list for PBXProject "Greenfield" */;
+			buildConfigurationList = 8B84D5F229425AC8000232FA /* Build configuration list for PBXProject "GreenField" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -412,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B84D5FF29425ACA000232FA /* Assets.xcassets in Resources */,
+				8B47181529DE327B009ED534 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +495,17 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		8B47181729DE327B009ED534 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8B47181629DE327B009ED534 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		8B13FB022958D17C00081389 /* Debug-Live */ = {
 			isa = XCBuildConfiguration;
@@ -558,7 +575,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BaseBundleID).app.widgets";
-				PRODUCT_NAME = GreenfieldWidgets;
+				PRODUCT_NAME = GreenFieldWidgets;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -637,7 +654,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BaseBundleID).app.widgets";
-				PRODUCT_NAME = GreenfieldWidgets;
+				PRODUCT_NAME = GreenFieldWidgets;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -709,7 +726,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BaseBundleID).app.widgets";
-				PRODUCT_NAME = GreenfieldWidgets;
+				PRODUCT_NAME = GreenFieldWidgets;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -782,7 +799,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BaseBundleID).app.widgets";
-				PRODUCT_NAME = GreenfieldWidgets;
+				PRODUCT_NAME = GreenFieldWidgets;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -945,7 +962,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BaseBundleID).app";
-				PRODUCT_NAME = Greenfield;
+				PRODUCT_NAME = GreenField;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -983,7 +1000,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BaseBundleID).app";
-				PRODUCT_NAME = Greenfield;
+				PRODUCT_NAME = GreenField;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -1010,7 +1027,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Greenfield.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Greenfield";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GreenField.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GreenField";
 			};
 			name = "Debug-Live";
 		};
@@ -1031,7 +1048,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Greenfield.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Greenfield";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GreenField.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GreenField";
 			};
 			name = "Release-Live";
 		};
@@ -1167,7 +1184,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BaseBundleID).app";
-				PRODUCT_NAME = Greenfield;
+				PRODUCT_NAME = GreenField;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -1194,7 +1211,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Greenfield.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Greenfield";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GreenField.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GreenField";
 			};
 			name = "Debug-Dev";
 		};
@@ -1305,7 +1322,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "$(BaseBundleID).app";
-				PRODUCT_NAME = Greenfield;
+				PRODUCT_NAME = GreenField;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -1332,7 +1349,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Greenfield.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Greenfield";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GreenField.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GreenField";
 			};
 			name = "Release-Dev";
 		};
@@ -1371,7 +1388,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = "Release-Live";
 		};
-		8B84D5F229425AC8000232FA /* Build configuration list for PBXProject "Greenfield" */ = {
+		8B84D5F229425AC8000232FA /* Build configuration list for PBXProject "GreenField" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8B84D61A29425ACA000232FA /* Debug-Live */,

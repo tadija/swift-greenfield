@@ -5,7 +5,7 @@
       "kind" : "remoteSourceControl",
       "location" : "git@github.com:tadija/AEKit.git",
       "state" : {
-        "revision" : "f54c721883d8141d912fb22694c0b0e0829121c0",
+        "revision" : "dcacaae278846fa0509a7faa1f1955f65bfcb002",
         "version" : "0.1.0"
       }
     }
