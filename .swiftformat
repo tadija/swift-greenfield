@@ -1,0 +1,54 @@
+--swiftversion 5.8
+
+# excluded directories and files
+
+--exclude fastlane, Pods, Scripts
+
+# format options
+
+--commas always
+--ifdef no-indent
+--indent 4
+--maxwidth 140
+--self remove
+--stripunusedargs closure-only
+--wraparguments before-first
+--wrapparameters before-first
+
+# enabled rules
+
+# Replace consecutive blank lines with a single blank line.
+--rules consecutiveBlankLines
+
+# Replace consecutive blank spaces with a single blank space.
+--rules consecutiveSpaces
+
+# Indent code in accordance with the scope level.
+--rules indent
+
+# Remove explicit self. Defined with option `--self remove`.
+--rules redundantSelf
+
+# Mark unused function arguments with _, but only in closures. Defined with `--unusedArguments closure-only`.
+--rules unusedArguments
+
+# Wrap lines that exceed maximum width of 140 characters. Defined with `--maxwidth 140`.
+--rules wrap
+
+ # Align wrapped function arguments or collection elements. Defined with `--wraparguments` and `--wrapparameters`.
+--rules wrapArguments
+
+# disabled rules
+
+--disable acronyms
+--disable blankLinesBetweenImports
+--disable blockComments
+--disable isEmpty
+--disable numberFormatting
+--disable organizeDeclarations
+--disable specifiers
+--disable sortedSwitchCases
+--disable wrapConditionalBodies
+--disable wrapEnumCases
+--disable wrapSwitchCases
+--disable markTypes

@@ -15,10 +15,10 @@ struct SwiftLintPlugin: BuildToolPlugin {
                     "\(context.package.directory.string)/.swiftlint.yml",
                     "--cache-path",
                     "\(context.pluginWorkDirectory.string)/cache",
-                    target.directory.string
+                    target.directory.string,
                 ],
                 environment: [:]
-            )
+            ),
         ]
     }
 }
@@ -38,10 +38,10 @@ extension SwiftLintPlugin: XcodeBuildToolPlugin {
                     "\(context.xcodeProject.directory.string)/.swiftlint.yml",
                     "--cache-path",
                     "\(context.pluginWorkDirectory.string)/cache",
-                    context.xcodeProject.directory.string
+                    context.xcodeProject.directory.string,
                 ],
                 environment: [:]
-            )
+            ),
         ]
     }
 }
