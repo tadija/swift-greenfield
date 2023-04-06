@@ -1,0 +1,72 @@
+# paths to ignore during linting, takes precedence over `included`
+excluded:
+    - fastlane
+    - Pods
+    - Scripts
+
+# rule identifiers to exclude from running
+disabled_rules:
+    - cyclomatic_complexity
+    - identifier_name
+    - inclusive_language
+    - nesting
+    - orphaned_doc_comment
+    - shorthand_operator
+    - trailing_comma
+    - unavailable_function
+
+# include some opt-in rules
+opt_in_rules:
+    - closure_end_indentation
+    - closure_spacing
+    - contains_over_first_not_nil
+    - empty_count
+    - empty_string
+    - explicit_init
+    - fatal_error_message
+    - first_where
+    - force_unwrapping
+    - implicit_return
+    - joined_default_parameter
+    - multiline_arguments
+    - multiline_parameters
+    - nimble_operator
+    - operator_usage_whitespace
+    - private_outlet
+    - prohibited_super_call
+    - redundant_nil_coalescing
+    - sorted_first_last
+    - sorted_imports
+    - unavailable_function
+    - untyped_error_in_catch
+    - vertical_parameter_alignment_on_call
+    - yoda_condition
+
+# other settings
+force_unwrapping: warning
+force_try: warning
+
+file_length:
+    ignore_comment_only_lines: true
+    warning: 751
+    error: 1201
+
+type_body_length:
+    warning: 401
+    error: 501
+
+function_body_length:
+    warning: 101
+    error: 151
+
+line_length:
+    warning: 141
+    error: 151
+
+identifier_name:
+    min_length: 1
+    max_length: 40
+
+type_name:
+    min_length: 1
+    max_length: 40

@@ -70,6 +70,8 @@
 		8B13FB072958D5B600081389 /* ExampleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleProvider.swift; sourceTree = "<group>"; };
 		8B47181229DCCF52009ED534 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		8B47181629DE327B009ED534 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8B47182029DF002B009ED534 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
+		8B47182529DF07E1009ED534 /* Plugins */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Plugins; sourceTree = "<group>"; };
 		8B7F753729741214003D44A2 /* SharedKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SharedKit; sourceTree = "<group>"; };
 		8B84D5F729425AC8000232FA /* GreenField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B84D5FA29425AC8000232FA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -168,6 +170,22 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		8B47181F29DF0013009ED534 /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				8B47182029DF002B009ED534 /* .swiftlint.yml */,
+			);
+			name = SwiftLint;
+			sourceTree = "<group>";
+		};
+		8B47182429DF0737009ED534 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				8B47182529DF07E1009ED534 /* Plugins */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
 		8B84D5EE29425AC8000232FA = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +196,7 @@
 				8B84D60B29425ACA000232FA /* AppTests */,
 				8B84D61529425ACA000232FA /* AppUITests */,
 				8B13FAF62958D17B00081389 /* Widgets */,
+				8B47182429DF0737009ED534 /* Packages */,
 				8BB78F5E2944DAF500C9B014 /* Scripts */,
 				8BDE00AB2957A4C600A87EE2 /* Makefile */,
 				8B47181229DCCF52009ED534 /* CHANGELOG.md */,
@@ -260,6 +279,7 @@
 			children = (
 				8B84D62929427D2F000232FA /* Env */,
 				8B3B09932986EFFF00ED7E8D /* Git */,
+				8B47181F29DF0013009ED534 /* SwiftLint */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -310,6 +330,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8B47182829DF0B7B009ED534 /* PBXTargetDependency */,
 				8B13FAFF2958D17C00081389 /* PBXTargetDependency */,
 			);
 			name = App;
@@ -391,6 +412,8 @@
 				Base,
 			);
 			mainGroup = 8B84D5EE29425AC8000232FA;
+			packageReferences = (
+			);
 			productRefGroup = 8B84D5F829425AC8000232FA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -482,6 +505,10 @@
 			platformFilter = ios;
 			target = 8B13FAEF2958D17B00081389 /* Widgets */;
 			targetProxy = 8B13FAFE2958D17C00081389 /* PBXContainerItemProxy */;
+		};
+		8B47182829DF0B7B009ED534 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 8B47182729DF0B7B009ED534 /* SwiftLint */;
 		};
 		8B84D60A29425ACA000232FA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1435,6 +1462,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8B47182729DF0B7B009ED534 /* SwiftLint */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:SwiftLint";
+		};
 		8B6D149E297C59FB002DE967 /* Common */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Common;

@@ -5,20 +5,21 @@ struct ExampleProvider: TimelineProvider {
         ExampleEntry(date: Date())
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (ExampleEntry) -> ()) {
+    func getSnapshot(in context: Context, completion: @escaping (ExampleEntry) -> Void) {
         let entry = ExampleEntry(date: Date())
         completion(entry)
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<ExampleEntry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<ExampleEntry>) -> Void) {
         var entries: [ExampleEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = ExampleEntry(date: entryDate)
-            entries.append(entry)
+            if let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate) {
+                let entry = ExampleEntry(date: entryDate)
+                entries.append(entry)
+            }
         }
 
         let timeline = Timeline(entries: entries, policy: .atEnd)

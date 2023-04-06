@@ -1,5 +1,5 @@
-import WidgetKit
 import SwiftUI
+import WidgetKit
 
 struct ExampleWidget: Widget {
     let kind: String = "Widgets"
@@ -13,7 +13,7 @@ struct ExampleWidget: Widget {
     }
 }
 
-struct ExampleEntryView : View {
+struct ExampleEntryView: View {
     var entry: ExampleProvider.Entry
 
     var body: some View {
