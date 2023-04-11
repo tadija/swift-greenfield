@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8B13FAF82958D17B00081389 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13FAF72958D17B00081389 /* Widgets.swift */; };
 		8B13FAFA2958D17B00081389 /* ExampleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13FAF92958D17B00081389 /* ExampleWidget.swift */; };
-		8B13FAFC2958D17C00081389 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B13FAFB2958D17C00081389 /* Assets.xcassets */; };
 		8B13FB002958D17C00081389 /* GreenFieldWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8B13FAF02958D17B00081389 /* GreenFieldWidgets.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8B13FB082958D5B600081389 /* ExampleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13FB072958D5B600081389 /* ExampleProvider.swift */; };
 		8B47181529DE327B009ED534 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B47181729DE327B009ED534 /* Localizable.strings */; };
@@ -21,6 +20,8 @@
 		8B84D60D29425ACA000232FA /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D60C29425ACA000232FA /* AppTests.swift */; };
 		8B84D61729425ACA000232FA /* AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D61629425ACA000232FA /* AppUITests.swift */; };
 		8B84D61929425ACA000232FA /* AppLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D61829425ACA000232FA /* AppLaunchTests.swift */; };
+		8BCE340729E5A30000C550A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B84D5FE29425ACA000232FA /* Assets.xcassets */; };
+		8BCE340829E5A30300C550A0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B47181729DE327B009ED534 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,13 +66,11 @@
 		8B13FAF02958D17B00081389 /* GreenFieldWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GreenFieldWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B13FAF72958D17B00081389 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
 		8B13FAF92958D17B00081389 /* ExampleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleWidget.swift; sourceTree = "<group>"; };
-		8B13FAFB2958D17C00081389 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B13FAFD2958D17C00081389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B13FB072958D5B600081389 /* ExampleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleProvider.swift; sourceTree = "<group>"; };
 		8B47181229DCCF52009ED534 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		8B47181629DE327B009ED534 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B47182029DF002B009ED534 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
-		8B47182529DF07E1009ED534 /* Plugins */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Plugins; sourceTree = "<group>"; };
 		8B7F753729741214003D44A2 /* SharedKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SharedKit; sourceTree = "<group>"; };
 		8B84D5F729425AC8000232FA /* GreenField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B84D5FA29425AC8000232FA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		8BC9B4F929D4FB8800994F78 /* bootstrap.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bootstrap.sh; sourceTree = "<group>"; };
 		8BCE33DA29E36EFB00C550A0 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = SOURCE_ROOT; };
 		8BCE33F129E55D2A00C550A0 /* .swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftgen.yml; sourceTree = SOURCE_ROOT; };
+		8BCE340129E582E300C550A0 /* Tools */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Tools; sourceTree = "<group>"; };
 		8BDE00AB2957A4C600A87EE2 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		8BDE00AC2957AD3F00A87EE2 /* clear-derived-data.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "clear-derived-data.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,7 +157,6 @@
 		8B13FB0A2958F1C000081389 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8B13FAFB2958D17C00081389 /* Assets.xcassets */,
 				8B13FAFD2958D17C00081389 /* Info.plist */,
 			);
 			path = Resources;
@@ -183,7 +182,7 @@
 		8B47182429DF0737009ED534 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				8B47182529DF07E1009ED534 /* Plugins */,
+				8BCE340129E582E300C550A0 /* Tools */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -207,6 +206,7 @@
 				8B84D61529425ACA000232FA /* AppUITests */,
 				8B13FAF62958D17B00081389 /* Widgets */,
 				8B47182429DF0737009ED534 /* Packages */,
+				8BCE340629E5A21C00C550A0 /* Resources */,
 				8BB78F5E2944DAF500C9B014 /* Scripts */,
 				8BDE00AB2957A4C600A87EE2 /* Makefile */,
 				8B47181229DCCF52009ED534 /* CHANGELOG.md */,
@@ -257,10 +257,8 @@
 		8B84D625294263B3000232FA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8B84D62629426439000232FA /* Entitlements */,
 				8B84D62C29427F06000232FA /* Info.plist */,
-				8B84D5FE29425ACA000232FA /* Assets.xcassets */,
-				8B47181729DE327B009ED534 /* Localizable.strings */,
+				8B84D62629426439000232FA /* Entitlements */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -313,6 +311,15 @@
 				8BCE33F129E55D2A00C550A0 /* .swiftgen.yml */,
 			);
 			name = SwiftGen;
+			sourceTree = "<group>";
+		};
+		8BCE340629E5A21C00C550A0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B84D5FE29425ACA000232FA /* Assets.xcassets */,
+				8B47181729DE327B009ED534 /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,7 +460,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B13FAFC2958D17C00081389 /* Assets.xcassets in Resources */,
+				8BCE340729E5A30000C550A0 /* Assets.xcassets in Resources */,
+				8BCE340829E5A30300C550A0 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,7 +508,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $ACTION != \"indexbuild\" ]; then\n\nARTIFACT_BUNDLE=\"$BUILD_DIR/../../SourcePackages/artifacts/plugins/SwiftFormatBinary/swiftformat.artifactbundle\"\nTOOL=\"$ARTIFACT_BUNDLE/swiftformat-0.51.4-macos/bin/swiftformat\"\n\n$TOOL \"$PROJECT_DIR\" --config \"$PROJECT_DIR/.swiftformat\" \n\nfi\n";
+			shellScript = "# skip running during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n# skip running during preview builds\nif [ $ENABLE_PREVIEWS = \"YES\" ]; then exit 0; fi\n\nARTIFACT_BUNDLE=\"$BUILD_DIR/../../SourcePackages/artifacts/tools/SwiftFormatBinary/swiftformat.artifactbundle\"\nTOOL=\"$ARTIFACT_BUNDLE/swiftformat-0.51.4-macos/bin/swiftformat\"\n\n$TOOL \"$PROJECT_DIR\" --config \"$PROJECT_DIR/.swiftformat\"\n";
 		};
 		8BCE33E729E4BABE00C550A0 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -519,7 +527,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $ACTION != \"indexbuild\" ]; then\n\nARTIFACT_BUNDLE=\"$BUILD_DIR/../../SourcePackages/artifacts/plugins/SwiftGenBinary/swiftgen.artifactbundle\"\nTOOL=\"$ARTIFACT_BUNDLE/swiftgen/bin/swiftgen\"\n\n$TOOL config run --config \"$PROJECT_DIR/.swiftgen.yml\"\n\nfi\n";
+			shellScript = "# skip running during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n# skip running during preview builds\nif [ $ENABLE_PREVIEWS = \"YES\" ]; then exit 0; fi\n\nARTIFACT_BUNDLE=\"$BUILD_DIR/../../SourcePackages/artifacts/tools/SwiftGenBinary/swiftgen.artifactbundle\"\nTOOL=\"$ARTIFACT_BUNDLE/swiftgen/bin/swiftgen\"\n\n$TOOL config run --config \"$PROJECT_DIR/.swiftgen.yml\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -1,6 +1,6 @@
 strings:
   inputs:
-    - App/Resources/en.lproj/Localizable.strings
+    - Resources/en.lproj/Localizable.strings
   outputs:
     - templateName: structured-swift5
       output: SharedKit/Sources/Common/Generated/Localizable.swift

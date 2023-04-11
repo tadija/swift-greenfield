@@ -1,3 +1,4 @@
+import Common
 import SwiftUI
 import WidgetKit
 
@@ -17,7 +18,15 @@ struct ExampleEntryView: View {
     var entry: ExampleProvider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        VStack {
+            Text(L10n.helloWorld)
+
+            Image(systemName: "globe")
+                .foregroundColor(Color("AccentColor"))
+                .padding(.vertical)
+
+            Text(entry.date, style: .time)
+        }
     }
 }
 

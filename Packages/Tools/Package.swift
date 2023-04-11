@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Plugins",
+    name: "Tools",
 
     platforms: [
         .iOS(.v15),
@@ -13,18 +13,9 @@ let package = Package(
     ],
 
     products: [
-        .plugin(
-            name: "SwiftLint",
-            targets: ["SwiftLint"]
-        ),
-        .plugin(
-            name: "SwiftGen",
-            targets: ["SwiftGen"]
-        ),
-        .plugin(
-            name: "SwiftFormat",
-            targets: ["SwiftFormat"]
-        ),
+        .plugin(name: "SwiftLint", targets: ["SwiftLint"]),
+        .plugin(name: "SwiftGen", targets: ["SwiftGen"]),
+        .plugin(name: "SwiftFormat", targets: ["SwiftFormat"]),
     ],
 
     targets: [

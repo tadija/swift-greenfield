@@ -11,10 +11,7 @@ let package = Package(
     ],
 
     products: [
-        .library(
-            name: "Common",
-            targets: ["Common"]
-        ),
+        .library(name: "Common", targets: ["Common"]),
     ],
 
     dependencies: [
