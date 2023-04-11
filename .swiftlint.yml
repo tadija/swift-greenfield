@@ -3,6 +3,7 @@ excluded:
     - fastlane
     - Pods
     - Scripts
+    - SharedKit/Sources/Common/Generated
 
 # rule identifiers to exclude from running
 disabled_rules:

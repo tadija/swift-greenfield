@@ -4,7 +4,7 @@ import SwiftUI
 struct AppView: View {
     var body: some View {
         VStack {
-            Text("hello_world")
+            Text(L10n.helloWorld)
                 .font(.largeTitle)
 
             Image(systemName: "globe")

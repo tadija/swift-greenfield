@@ -96,6 +96,7 @@
 		8BB78F7329450C3200C9B014 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		8BC9B4F929D4FB8800994F78 /* bootstrap.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bootstrap.sh; sourceTree = "<group>"; };
 		8BCE33DA29E36EFB00C550A0 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = SOURCE_ROOT; };
+		8BCE33F129E55D2A00C550A0 /* .swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftgen.yml; sourceTree = SOURCE_ROOT; };
 		8BDE00AB2957A4C600A87EE2 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		8BDE00AC2957AD3F00A87EE2 /* clear-derived-data.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "clear-derived-data.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -289,6 +290,7 @@
 				8B84D62929427D2F000232FA /* Env */,
 				8B3B09932986EFFF00ED7E8D /* Git */,
 				8B47181F29DF0013009ED534 /* SwiftLint */,
+				8BCE33DE29E4B42100C550A0 /* SwiftGen */,
 				8B47183B29DF83BE009ED534 /* SwiftFormat */,
 			);
 			path = Config;
@@ -303,6 +305,14 @@
 				8BB78F72294507BD00C9B014 /* rename-xcodeproj.sh */,
 			);
 			path = Scripts;
+			sourceTree = "<group>";
+		};
+		8BCE33DE29E4B42100C550A0 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				8BCE33F129E55D2A00C550A0 /* .swiftgen.yml */,
+			);
+			name = SwiftGen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +342,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8B84D61C29425ACA000232FA /* Build configuration list for PBXNativeTarget "App" */;
 			buildPhases = (
+				8BCE33E729E4BABE00C550A0 /* SwiftGen */,
 				8B1FCEFC29E2EB9F00EEFB4A /* SwiftFormat */,
 				8B84D5F329425AC8000232FA /* Sources */,
 				8B84D5F429425AC8000232FA /* Frameworks */,
@@ -341,7 +352,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				8B47182829DF0B7B009ED534 /* PBXTargetDependency */,
+				8BCE33E329E4B82B00C550A0 /* PBXTargetDependency */,
 				8B13FAFF2958D17C00081389 /* PBXTargetDependency */,
 			);
 			name = App;
@@ -491,6 +502,25 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ $ACTION != \"indexbuild\" ]; then\n\nARTIFACT_BUNDLE=\"$BUILD_DIR/../../SourcePackages/artifacts/plugins/SwiftFormatBinary/swiftformat.artifactbundle\"\nTOOL=\"$ARTIFACT_BUNDLE/swiftformat-0.51.4-macos/bin/swiftformat\"\n\n$TOOL \"$PROJECT_DIR\" --config \"$PROJECT_DIR/.swiftformat\" \n\nfi\n";
 		};
+		8BCE33E729E4BABE00C550A0 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $ACTION != \"indexbuild\" ]; then\n\nARTIFACT_BUNDLE=\"$BUILD_DIR/../../SourcePackages/artifacts/plugins/SwiftGenBinary/swiftgen.artifactbundle\"\nTOOL=\"$ARTIFACT_BUNDLE/swiftgen/bin/swiftgen\"\n\n$TOOL config run --config \"$PROJECT_DIR/.swiftgen.yml\"\n\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -539,10 +569,6 @@
 			target = 8B13FAEF2958D17B00081389 /* Widgets */;
 			targetProxy = 8B13FAFE2958D17C00081389 /* PBXContainerItemProxy */;
 		};
-		8B47182829DF0B7B009ED534 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 8B47182729DF0B7B009ED534 /* SwiftLint */;
-		};
 		8B84D60A29425ACA000232FA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8B84D5F629425AC8000232FA /* App */;
@@ -552,6 +578,10 @@
 			isa = PBXTargetDependency;
 			target = 8B84D5F629425AC8000232FA /* App */;
 			targetProxy = 8B84D61329425ACA000232FA /* PBXContainerItemProxy */;
+		};
+		8BCE33E329E4B82B00C550A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 8BCE33E229E4B82B00C550A0 /* SwiftLint */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1495,10 +1525,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8B47182729DF0B7B009ED534 /* SwiftLint */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = "plugin:SwiftLint";
-		};
 		8B6D149E297C59FB002DE967 /* Common */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Common;
@@ -1506,6 +1532,10 @@
 		8B6D14A0297C5A09002DE967 /* Common */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Common;
+		};
+		8BCE33E229E4B82B00C550A0 /* SwiftLint */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:SwiftLint";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

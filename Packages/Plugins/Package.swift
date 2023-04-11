@@ -18,6 +18,10 @@ let package = Package(
             targets: ["SwiftLint"]
         ),
         .plugin(
+            name: "SwiftGen",
+            targets: ["SwiftGen"]
+        ),
+        .plugin(
             name: "SwiftFormat",
             targets: ["SwiftFormat"]
         ),
@@ -33,6 +37,22 @@ let package = Package(
             name: "SwiftLint",
             capability: .buildTool(),
             dependencies: ["SwiftLintBinary"]
+        ),
+
+        .binaryTarget(
+            name: "SwiftGenBinary",
+            url: "https://github.com/SwiftGen/SwiftGen/releases/download/6.6.2/swiftgen-6.6.2.artifactbundle.zip",
+            checksum: "7586363e24edcf18c2da3ef90f379e9559c1453f48ef5e8fbc0b818fbbc3a045"
+        ),
+        .plugin(
+            name: "SwiftGen",
+            capability: .command(
+                intent: .sourceCodeFormatting(),
+                permissions: [
+                    .writeToPackageDirectory(reason: "This command generates source code")
+                ]
+            ),
+            dependencies: ["SwiftGenBinary"]
         ),
 
         .binaryTarget(
