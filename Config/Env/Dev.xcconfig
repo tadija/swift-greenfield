@@ -1,7 +1,13 @@
-#include "Shared.xcconfig"
+#include "BuildSettings.xcconfig"
 
+// Apple Developer Team ID
+TeamID = VL46Q749LJ
+
+// Environment ID
 EnvID = Dev
 
-TeamID = VL46Q749LJ
+// Bundle ID Prefix
 BaseBundleID = dev.greenfield
+
+// Name
 DisplayName = GreenField.Dev

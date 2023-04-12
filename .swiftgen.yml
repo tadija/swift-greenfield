@@ -3,6 +3,6 @@ strings:
     - Resources/en.lproj/Localizable.strings
   outputs:
     - templateName: structured-swift5
-      output: SharedKit/Sources/Common/Generated/Localizable.swift
+      output: TopLevel/Sources/TopLevel/Generated/Localizable.swift
       params:
         publicAccess: true

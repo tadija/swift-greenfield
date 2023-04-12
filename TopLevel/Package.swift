@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SharedKit",
+    name: "TopLevel",
 
     platforms: [
         .iOS(.v16),
@@ -11,7 +11,7 @@ let package = Package(
     ],
 
     products: [
-        .library(name: "Common", targets: ["Common"]),
+        .library(name: "TopLevel", targets: ["TopLevel"]),
     ],
 
     dependencies: [
@@ -20,7 +20,7 @@ let package = Package(
 
     targets: [
         .target(
-            name: "Common",
+            name: "TopLevel",
             dependencies: [
                 "AEKit",
             ],
@@ -29,8 +29,8 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "CommonTests",
-            dependencies: ["Common"]
+            name: "TopLevelTests",
+            dependencies: ["TopLevel"]
         ),
     ]
 )

@@ -1,5 +1,5 @@
 SCRIPTS="./Scripts"
-CONFIG="config-env-shared.sh"
+CONFIG="config-env-bs.sh"
 
 .PHONY: help
 help: ## display help

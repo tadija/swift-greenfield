@@ -1,12 +1,17 @@
-import Common
 import SwiftUI
+import TopLevel
 import WidgetKit
 
 struct ExampleWidget: Widget {
-    let kind: String = "Widgets"
+    static var id: String {
+        String(describing: self)
+    }
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: ExampleProvider()) { entry in
+        StaticConfiguration(
+            kind: Self.id,
+            provider: ExampleProvider()
+        ) { entry in
             ExampleEntryView(entry: entry)
         }
         .configurationDisplayName("My Widget")

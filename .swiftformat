@@ -26,8 +26,14 @@
 # Indent code in accordance with the scope level.
 --rules indent
 
+# Remove unneeded return keyword.
+--rules redundantReturn
+
 # Remove explicit self. Defined with option `--self remove`.
 --rules redundantSelf
+
+# Sort import statements alphabetically.
+--rules sortedImports
 
 # Mark unused function arguments with _, but only in closures. Defined with `--unusedArguments closure-only`.
 --rules unusedArguments
@@ -44,6 +50,7 @@
 --disable blankLinesBetweenImports
 --disable blockComments
 --disable isEmpty
+--disable markTypes
 --disable numberFormatting
 --disable organizeDeclarations
 --disable specifiers
@@ -51,4 +58,3 @@
 --disable wrapConditionalBodies
 --disable wrapEnumCases
 --disable wrapSwitchCases
---disable markTypes

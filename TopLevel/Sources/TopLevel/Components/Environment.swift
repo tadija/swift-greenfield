@@ -1,11 +1,6 @@
 import AEKit
 
-// MARK: - Top level
-
-/// Provides top level access to the current environment.
-public let env = Env()
-
-// MARK: - Custom environments
+// MARK: - Environment
 
 /// Extends `Env` with custom environments.
 extension Env: Identifiable {
@@ -97,10 +92,13 @@ extension Env {
 }
 
 extension Env.Config: CustomStringConvertible {
+
+    /// String describing custom environment config
     public var description: String {
         """
         build configuration: \(buildConfiguration)
         environment id: \(envID.rawValue)
         """
     }
+
 }

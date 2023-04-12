@@ -1,5 +1,5 @@
-import Common
 import SwiftUI
+import TopLevel
 
 struct AppView: View {
     var body: some View {
@@ -12,7 +12,7 @@ struct AppView: View {
                 .foregroundColor(.accentColor)
                 .padding()
 
-            Text(env.customDescription)
+            Text(TopLevel.envDescription)
                 .padding()
         }
         .padding()

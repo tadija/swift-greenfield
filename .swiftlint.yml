@@ -3,7 +3,7 @@ excluded:
     - fastlane
     - Pods
     - Scripts
-    - SharedKit/Sources/Common/Generated
+    - TopLevel/Sources/TopLevel/Generated
 
 # rule identifiers to exclude from running
 disabled_rules:
@@ -12,6 +12,7 @@ disabled_rules:
     - inclusive_language
     - nesting
     - orphaned_doc_comment
+    - redundant_discardable_let
     - shorthand_operator
     - trailing_comma
     - unavailable_function
