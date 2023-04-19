@@ -5,7 +5,7 @@ struct AppView: View {
     var body: some View {
         VStack {
             Text(L10n.helloWorld)
-                .font(.largeTitle)
+                .font(.bold(40))
 
             Image(systemName: "globe")
                 .imageScale(.large)
@@ -13,6 +13,7 @@ struct AppView: View {
                 .padding()
 
             Text(TopLevel.envDescription)
+                .font(.regular(18))
                 .padding()
         }
         .padding()

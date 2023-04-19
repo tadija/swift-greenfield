@@ -25,12 +25,14 @@ struct ExampleEntryView: View {
     var body: some View {
         VStack {
             Text(L10n.helloWorld)
+                .font(.bold(20))
 
             Image(systemName: "globe")
                 .foregroundColor(Color("AccentColor"))
                 .padding(.vertical)
 
             Text(entry.date, style: .time)
+                .font(.light(20))
         }
     }
 }

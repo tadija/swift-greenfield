@@ -26,6 +26,13 @@ let package = Package(
             ],
             resources: [
                 .copy("Resources/Assets.xcassets"),
+                .process("Resources/Fonts"),
+            ],
+            swiftSettings: [
+                .unsafeFlags(["-Xfrontend", "-application-extension"])
+            ],
+            linkerSettings: [
+                .unsafeFlags(["-Xlinker", "-application_extension"])
             ]
         ),
         .testTarget(
