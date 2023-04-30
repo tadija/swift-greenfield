@@ -10,6 +10,7 @@ disabled_rules:
     - cyclomatic_complexity
     - identifier_name
     - inclusive_language
+    - large_tuple
     - nesting
     - orphaned_doc_comment
     - redundant_discardable_let

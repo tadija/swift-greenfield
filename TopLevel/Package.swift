@@ -15,14 +15,14 @@ let package = Package(
     ],
 
     dependencies: [
-        .package(url: "https://github.com/tadija/AEKit.git", from: "0.1.0"),
+        .package(path: "../Packages/Utils"),
     ],
 
     targets: [
         .target(
             name: "TopLevel",
             dependencies: [
-                "AEKit",
+                .product(name: "Utils", package: "Utils")
             ],
             resources: [
                 .copy("Resources/Assets.xcassets"),
