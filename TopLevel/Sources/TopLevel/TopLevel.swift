@@ -1,4 +1,5 @@
-import Utils
+import Demo
+import SwiftUI
 
 /// TopLevel namespace
 public enum TopLevel {}
@@ -7,12 +8,8 @@ public enum TopLevel {}
 
 public extension TopLevel {
 
-    /// Custom environment
-    static let env = Env()
-
-    /// Custom environment description
-    static var envDescription: String {
-        env.customDescription
+    static func makeAppView() -> some View {
+        DemoView()
     }
 
 }

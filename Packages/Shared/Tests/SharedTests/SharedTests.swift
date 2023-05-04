@@ -1,7 +1,7 @@
-@testable import TopLevel
+@testable import Shared
 import XCTest
 
-final class TopLevelTests: XCTestCase {
+final class SharedTests: XCTestCase {
     func testExample() throws {
         XCTAssertTrue(true)
     }

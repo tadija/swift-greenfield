@@ -1,27 +1,34 @@
+import Shared
 import SwiftUI
-import TopLevel
+import Utils
 
-struct AppView: View {
-    var body: some View {
+public struct DemoView: View {
+    public init() {}
+
+    public var body: some View {
         VStack {
             Text(L10n.helloWorld)
                 .font(.bold(40))
 
             Image(systemName: "globe")
                 .imageScale(.large)
-                .foregroundColor(.accentColor)
+                .foregroundColor(.semantic(.tintPrimary))
                 .padding()
 
-            Text(TopLevel.envDescription)
+            Text(envDescription)
                 .font(.regular(18))
                 .padding()
         }
         .padding()
     }
+
+    var envDescription: String {
+        Env().customDescription
+    }
 }
 
-struct AppView_Previews: PreviewProvider {
+struct DemoView_Previews: PreviewProvider {
     static var previews: some View {
-        AppView()
+        DemoView()
     }
 }

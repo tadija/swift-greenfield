@@ -1,5 +1,5 @@
+import Shared
 import SwiftUI
-import TopLevel
 import WidgetKit
 
 struct ExampleWidget: Widget {

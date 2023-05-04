@@ -1,3 +1,3 @@
 # TopLevel
 
-This package defines modules & dependencies for the main project.
+This package defines libraries used by the main project.

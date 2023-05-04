@@ -59,7 +59,15 @@ extension Env {
         do {
             return try configDictionary.jsonDecode()
         } catch {
-            fatalError("❌ failed decoding config with error: \(error)")
+            if isXcodePreview {
+                /// - Note: Xcode does not propagate custom config / build configurations to Swift packages.
+                return Config(
+                    buildConfiguration: "Debug",
+                    envID: .dev
+                )
+            } else {
+                fatalError("❌ failed decoding config with error: \(error)")
+            }
         }
     }
 

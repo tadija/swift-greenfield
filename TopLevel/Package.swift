@@ -15,29 +15,17 @@ let package = Package(
     ],
 
     dependencies: [
-        .package(path: "../Packages/Utils"),
+        .package(path: "../Packages/Demo"),
     ],
 
     targets: [
         .target(
             name: "TopLevel",
             dependencies: [
-                .product(name: "Utils", package: "Utils")
-            ],
-            resources: [
-                .copy("Resources/Assets.xcassets"),
-                .process("Resources/Fonts"),
-            ],
-            swiftSettings: [
-                .unsafeFlags(["-Xfrontend", "-application-extension"])
-            ],
-            linkerSettings: [
-                .unsafeFlags(["-Xlinker", "-application_extension"])
+                "Demo"
             ]
         ),
-        .testTarget(
-            name: "TopLevelTests",
-            dependencies: ["TopLevel"]
-        ),
+
+        .testTarget(name: "TopLevelTests", dependencies: ["TopLevel"]),
     ]
 )

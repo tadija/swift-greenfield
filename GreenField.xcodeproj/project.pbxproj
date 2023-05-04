@@ -13,7 +13,6 @@
 		8B13FB082958D5B600081389 /* ExampleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13FB072958D5B600081389 /* ExampleProvider.swift */; };
 		8B47181529DE327B009ED534 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B47181729DE327B009ED534 /* Localizable.strings */; };
 		8B84D5FB29425AC8000232FA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D5FA29425AC8000232FA /* App.swift */; };
-		8B84D5FD29425AC8000232FA /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D5FC29425AC8000232FA /* AppView.swift */; };
 		8B84D5FF29425ACA000232FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B84D5FE29425ACA000232FA /* Assets.xcassets */; };
 		8B84D60D29425ACA000232FA /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D60C29425ACA000232FA /* AppTests.swift */; };
 		8B84D61729425ACA000232FA /* AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D61629425ACA000232FA /* AppUITests.swift */; };
@@ -63,6 +62,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8B044EB52A03A78200BD979C /* Demo */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Demo; sourceTree = "<group>"; };
+		8B044EB62A03ACD000BD979C /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = "<group>"; };
 		8B13FAF02958D17B00081389 /* GreenFieldWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GreenFieldWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B13FAF72958D17B00081389 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
 		8B13FAF92958D17B00081389 /* ExampleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleWidget.swift; sourceTree = "<group>"; };
@@ -74,7 +75,6 @@
 		8B6859A629F824720015905A /* Utils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Utils; sourceTree = "<group>"; };
 		8B84D5F729425AC8000232FA /* GreenField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B84D5FA29425AC8000232FA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		8B84D5FC29425AC8000232FA /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		8B84D5FE29425ACA000232FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B84D60029425ACA000232FA /* App-Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "App-Dev.entitlements"; sourceTree = "<group>"; };
 		8B84D60829425ACA000232FA /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +183,8 @@
 		8B47182429DF0737009ED534 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				8B044EB52A03A78200BD979C /* Demo */,
+				8B044EB62A03ACD000BD979C /* Shared */,
 				8BCE340129E582E300C550A0 /* Tools */,
 				8B6859A629F824720015905A /* Utils */,
 			);
@@ -231,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				8B84D5FA29425AC8000232FA /* App.swift */,
-				8B84D5FC29425AC8000232FA /* AppView.swift */,
 				8B84D625294263B3000232FA /* Resources */,
 			);
 			path = App;
@@ -567,7 +568,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B84D5FD29425AC8000232FA /* AppView.swift in Sources */,
 				8B84D5FB29425AC8000232FA /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
