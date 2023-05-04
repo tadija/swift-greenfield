@@ -1,84 +1,12 @@
 import SwiftUI
+import Utils
 
-// MARK: - API
+// MARK: - Custom Fonts
 
 public extension Font {
-
-    static func light(_ size: CGFloat, fixed: Bool = false) -> Font {
-        fixed ? light.fixed(size) : light.dynamic(size)
-    }
-
-    static func regular(_ size: CGFloat, fixed: Bool = false) -> Font {
-        fixed ? regular.fixed(size) : regular.dynamic(size)
-    }
-
-    static func bold(_ size: CGFloat, fixed: Bool = false) -> Font {
-        fixed ? bold.fixed(size) : bold.dynamic(size)
-    }
-
-}
-
-// MARK: - Constants
-
-private extension Font {
-    static let light = Custom(name: "Supreme-Light", ext: "otf")
-    static let regular = Custom(name: "Supreme-Regular", ext: "otf")
-    static let bold = Custom(name: "Supreme-Bold", ext: "otf")
-}
-
-// MARK: - Helpers
-
-private extension Font {
-    struct Custom: CustomStringConvertible {
-        let name: String
-        let ext: String
-
-        var description: String {
-            "\(name).\(ext)"
-        }
-
-        init(name: String, ext: String) {
-            self.name = name
-            self.ext = ext
-
-            registerIfNeeded()
-        }
-
-        func dynamic(_ size: CGFloat) -> Font {
-            Font.custom(name, size: size)
-        }
-
-        func fixed(_ size: CGFloat) -> Font {
-            Font.custom(name, fixedSize: size)
-        }
-
-        private func registerIfNeeded() {
-            let registeredFonts = CTFontManagerCopyAvailablePostScriptNames() as Array
-            guard registeredFonts
-                .compactMap({ $0 as? String })
-                .contains(where: { $0 == name })
-            else {
-                register()
-                return
-            }
-        }
-
-        private func register() {
-            guard let fontURL = Bundle.module.url(forResource: name, withExtension: ext) else {
-                assertionFailure("missing font: \(description)")
-                return
-            }
-
-            var error: Unmanaged<CFError>?
-            let success = CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, &error)
-
-            if success {
-                print("registered font: \(description)")
-            } else {
-                print("failed to register font: \(description)")
-            }
-        }
-    }
+    static let light = Custom(file: "Supreme-Light.otf", bundle: .module)
+    static let regular = Custom(file: "Supreme-Regular.otf", bundle: .module)
+    static let bold = Custom(file: "Supreme-Bold.otf", bundle: .module)
 }
 
 // MARK: - View
@@ -105,9 +33,9 @@ public struct FontsView: View {
     }
 
     private func makeSection(_ font: Font.Custom) -> some View {
-        Section(font.name) {
+        Section(font.description) {
             Text("The quick brown fox jumps over the lazy dog \n🦊💫🐶")
-                .font(font.dynamic(fontSize))
+                .font(font(fontSize))
         }
     }
 

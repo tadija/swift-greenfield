@@ -1,4 +1,5 @@
 import SwiftUI
+import Utils
 
 // MARK: - API
 
@@ -18,7 +19,7 @@ public extension Color {
             assertionFailure("missing color for key: \(semantic)")
             return .red
         }
-        return Adaptive(light: lightColor, dark: darkColor).resolved()
+        return Adaptive(light: lightColor, dark: darkColor)()
     }
 
 }
@@ -52,31 +53,6 @@ private enum ColorPalette: String, CaseIterable {
     case gray = "#808080"
     case green = "#56D437"
     case black = "#000000"
-}
-
-private extension Color {
-    struct Adaptive {
-        let light: Color
-        let dark: Color
-
-        func resolved() -> Color {
-            #if os(macOS)
-            return Color(
-                NSColor(name: nil) {
-                    $0.bestMatch(from: [.darkAqua, .aqua]) == .darkAqua ?
-                        NSColor(dark) : NSColor(light)
-                }
-            )
-            #elseif canImport(UIKit)
-            return Color(
-                UIColor {
-                    $0.userInterfaceStyle == .dark ?
-                        UIColor(dark) : UIColor(light)
-                }
-            )
-            #endif
-        }
-    }
 }
 
 // MARK: - View
