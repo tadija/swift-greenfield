@@ -1,8 +1,40 @@
-import Utils
+import Foundation
+import Minions
 
 // MARK: - Environment
 
-/// Extends `Env` with custom environments.
+/// Type which encapsulates current environment info.
+public struct Env: CustomStringConvertible {
+
+    /// Build configuration and custom config
+    public var buildConfig: BuildConfig {
+        .init()
+    }
+
+    /// A collection of information about current device
+    public var device: Device {
+        .init()
+    }
+
+    /// A mechanism to track current app version state
+    public var version: Version {
+        .init(buildConfig.bundleVersion)
+    }
+
+    /// String describing custom environment
+    public var description: String {
+        """
+        + build config \n\(buildConfig)\n
+        + custom config \n\(config)\n
+        + device info \n\(device)\n
+        + app version \n\(version)\n
+        """
+    }
+
+}
+
+// MARK: - Custom Environments
+
 extension Env: Identifiable {
 
     /// Custom environments
@@ -49,17 +81,26 @@ extension Env: Identifiable {
 extension Env {
 
     /// Custom environment config
-    public struct Config: Codable {
+    public struct Config: Codable, CustomStringConvertible {
+
         public let buildConfiguration: String
         public let envID: Env.ID
+
+        /// String describing custom environment config
+        public var description: String {
+            """
+            build configuration: \(buildConfiguration)
+            environment id: \(envID.rawValue)
+            """
+        }
     }
 
     /// Decoded custom environment config
     public var config: Config {
         do {
-            return try configDictionary.jsonDecode()
+            return try buildConfig.customConfig.jsonDecode()
         } catch {
-            if isXcodePreview {
+            if ProcessInfo.isXcodePreview {
                 /// - Note: Xcode does not propagate custom config / build configurations to Swift packages.
                 return Config(
                     buildConfiguration: "Debug",
@@ -73,40 +114,15 @@ extension Env {
 
 }
 
-// MARK: - Custom helpers
+// MARK: - Factory
 
-extension Env {
-
-    /// A collection of information about the current device
-    public var device: Device {
-        .init()
+extension Dependencies {
+    public var env: Env {
+        get { Self[Env.self] }
+        set { Self[Env.self] = newValue }
     }
-
-    /// A mechanism to track the current app version state
-    public var version: Version {
-        .init(bundleVersion)
-    }
-
-    /// String describing custom environment & configuration
-    public var customDescription: String {
-        """
-        + device \n\(device)\n
-        + product \n\(self)\n
-        + config \n\(config)\n
-        + version \n\(version)\n
-        """
-    }
-
 }
 
-extension Env.Config: CustomStringConvertible {
-
-    /// String describing custom environment config
-    public var description: String {
-        """
-        build configuration: \(buildConfiguration)
-        environment id: \(envID.rawValue)
-        """
-    }
-
+extension Env: DependencyKey {
+    public static var liveValue = Env()
 }

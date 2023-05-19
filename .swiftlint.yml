@@ -51,7 +51,7 @@ force_try: warning
 
 file_length:
     ignore_comment_only_lines: true
-    warning: 751
+    warning: 1101
     error: 1201
 
 type_body_length:

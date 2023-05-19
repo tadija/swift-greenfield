@@ -4,23 +4,28 @@ PROJECT_NAME="$1"
 
 function bootstrap {
     echo ""
-    echo "GreenField bootstrap running 🚧"
+    echo "swift-greenfield | bootstrap running 🚧"
     echo ""
 
-    git clone git@github.com:tadija/greenfield.git $PROJECT_NAME
-
+    git clone https://github.com/tadija/swift-greenfield.git $PROJECT_NAME
     cd $PROJECT_NAME
+
     Scripts/rename-xcodeproj.sh $PROJECT_NAME
+
+    echo "# $PROJECT_NAME" > README.md
+    echo "# Release Notes" > CHANGELOG.md
 
     rm -rf .git
     git init
-
     git add .
     git commit -m "Init project: \"$PROJECT_NAME\""
 
     echo ""
-    echo "GreenField bootstrap done ✅"
+    echo "swift-greenfield | bootstrap done ✅"
     echo ""
+
+    echo "opening $PROJECT_NAME in Xcode..."
+    xed .
 }
 
 if [ -z $PROJECT_NAME ]

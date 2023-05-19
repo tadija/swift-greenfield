@@ -15,13 +15,13 @@ let package = Package(
     ],
 
     dependencies: [
-        .package(path: "../Utils"),
+        .package(url: "https://github.com/tadija/swift-minions.git", branch: "main"),
     ],
 
     targets: [
         .target(
             name: "Shared",
-            dependencies: ["Utils"],
+            dependencies: [.product(name: "Minions", package: "swift-minions")],
             resources: [
                 .copy("Resources/Assets.xcassets"),
                 .process("Resources/Fonts"),

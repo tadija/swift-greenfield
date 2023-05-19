@@ -1,5 +1,5 @@
+import Minions
 import SwiftUI
-import Utils
 
 // MARK: - API
 

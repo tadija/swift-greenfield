@@ -1,8 +1,9 @@
 import Shared
 import SwiftUI
-import Utils
 
 public struct DemoView: View {
+    @StateObject var vm = DemoViewModel()
+
     public init() {}
 
     public var body: some View {
@@ -10,20 +11,20 @@ public struct DemoView: View {
             Text(L10n.helloWorld)
                 .font(.bold(40))
 
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.semantic(.tintPrimary))
-                .padding()
+            VStack {
+                Image(systemName: "globe")
+                    .imageScale(.large)
+                    .foregroundColor(.semantic(.tintPrimary))
 
-            Text(envDescription)
-                .font(.regular(18))
+                Text(vm.currentContext)
+                    .font(.regular(24))
+            }
+            .padding()
+
+            Text(vm.environmentDescription)
+                .font(.light(16))
                 .padding()
         }
-        .padding()
-    }
-
-    var envDescription: String {
-        Env().customDescription
     }
 }
 

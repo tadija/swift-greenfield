@@ -20,5 +20,6 @@ let package = Package(
 
     targets: [
         .target(name: "Demo", dependencies: ["Shared"]),
+        .testTarget(name: "DemoTests", dependencies: ["Demo"]),
     ]
 )

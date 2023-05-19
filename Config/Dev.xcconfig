@@ -4,10 +4,10 @@
 TeamID = VL46Q749LJ
 
 // Environment ID
-EnvID = Live
+EnvID = Dev
 
 // Bundle ID Prefix
-BaseBundleID = live.greenfield
+BaseBundleID = dev.GreenField
 
 // Name
-DisplayName = GreenField
+DisplayName = GreenField.Dev

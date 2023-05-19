@@ -72,7 +72,9 @@
 		8B47181229DCCF52009ED534 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		8B47181629DE327B009ED534 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B47182029DF002B009ED534 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
-		8B6859A629F824720015905A /* Utils */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Utils; sourceTree = "<group>"; };
+		8B5FD0BC2A16D32A007F8357 /* minions.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = minions.sh; sourceTree = "<group>"; };
+		8B5FD0BD2A16EA46007F8357 /* clear-spm-cache.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "clear-spm-cache.sh"; sourceTree = "<group>"; };
+		8B5FD0C02A17D087007F8357 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		8B84D5F729425AC8000232FA /* GreenField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B84D5FA29425AC8000232FA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		8B84D5FE29425ACA000232FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,13 +89,12 @@
 		8B84D62B29427D58000232FA /* Live.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Live.xcconfig; sourceTree = "<group>"; };
 		8B84D62C29427F06000232FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B84D63529428289000232FA /* App-Live.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "App-Live.entitlements"; sourceTree = "<group>"; };
-		8BB78F5D2944DAC800C9B014 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		8BB78F602944EC8600C9B014 /* AppTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = AppTests.xctestplan; path = AppTests/AppTests.xctestplan; sourceTree = SOURCE_ROOT; };
 		8BB78F702944F0D900C9B014 /* AppUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = AppUITests.xctestplan; sourceTree = "<group>"; };
-		8BB78F712945073900C9B014 /* config-env-bs.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "config-env-bs.sh"; sourceTree = "<group>"; };
+		8BB78F712945073900C9B014 /* build-settings.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-settings.sh"; sourceTree = "<group>"; };
 		8BB78F72294507BD00C9B014 /* rename-xcodeproj.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "rename-xcodeproj.sh"; sourceTree = "<group>"; };
 		8BB78F7329450C3200C9B014 /* BuildSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BuildSettings.xcconfig; sourceTree = "<group>"; };
-		8BC9B4F929D4FB8800994F78 /* greenfield-bootstrap.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "greenfield-bootstrap.sh"; sourceTree = "<group>"; };
+		8BC9B4F929D4FB8800994F78 /* bootstrap.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bootstrap.sh; sourceTree = "<group>"; };
 		8BCE33DA29E36EFB00C550A0 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = SOURCE_ROOT; };
 		8BCE33F129E55D2A00C550A0 /* .swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftgen.yml; sourceTree = SOURCE_ROOT; };
 		8BCE340129E582E300C550A0 /* Tools */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Tools; sourceTree = "<group>"; };
@@ -163,15 +164,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		8B3B09932986EFFF00ED7E8D /* Git */ = {
-			isa = PBXGroup;
-			children = (
-				8BB78F5D2944DAC800C9B014 /* .gitignore */,
-			);
-			name = Git;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		8B47181F29DF0013009ED534 /* SwiftLint */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,7 +178,6 @@
 				8B044EB52A03A78200BD979C /* Demo */,
 				8B044EB62A03ACD000BD979C /* Shared */,
 				8BCE340129E582E300C550A0 /* Tools */,
-				8B6859A629F824720015905A /* Utils */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -197,6 +188,14 @@
 				8BCE33DA29E36EFB00C550A0 /* .swiftformat */,
 			);
 			name = SwiftFormat;
+			sourceTree = "<group>";
+		};
+		8B5FD0BF2A17D07A007F8357 /* Git */ = {
+			isa = PBXGroup;
+			children = (
+				8B5FD0C02A17D087007F8357 /* .gitignore */,
+			);
+			name = Git;
 			sourceTree = "<group>";
 		};
 		8B84D5EE29425AC8000232FA = {
@@ -275,21 +274,13 @@
 			path = Entitlements;
 			sourceTree = "<group>";
 		};
-		8B84D62929427D2F000232FA /* Env */ = {
+		8B84D6382944D837000232FA /* Config */ = {
 			isa = PBXGroup;
 			children = (
 				8BB78F7329450C3200C9B014 /* BuildSettings.xcconfig */,
 				8B84D62A29427D50000232FA /* Dev.xcconfig */,
 				8B84D62B29427D58000232FA /* Live.xcconfig */,
-			);
-			path = Env;
-			sourceTree = "<group>";
-		};
-		8B84D6382944D837000232FA /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				8B84D62929427D2F000232FA /* Env */,
-				8B3B09932986EFFF00ED7E8D /* Git */,
+				8B5FD0BF2A17D07A007F8357 /* Git */,
 				8B47181F29DF0013009ED534 /* SwiftLint */,
 				8BCE33DE29E4B42100C550A0 /* SwiftGen */,
 				8B47183B29DF83BE009ED534 /* SwiftFormat */,
@@ -300,9 +291,11 @@
 		8BB78F5E2944DAF500C9B014 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
-				8BC9B4F929D4FB8800994F78 /* greenfield-bootstrap.sh */,
+				8BC9B4F929D4FB8800994F78 /* bootstrap.sh */,
+				8BB78F712945073900C9B014 /* build-settings.sh */,
 				8BDE00AC2957AD3F00A87EE2 /* clear-derived-data.sh */,
-				8BB78F712945073900C9B014 /* config-env-bs.sh */,
+				8B5FD0BD2A16EA46007F8357 /* clear-spm-cache.sh */,
+				8B5FD0BC2A16D32A007F8357 /* minions.sh */,
 				8BB78F72294507BD00C9B014 /* rename-xcodeproj.sh */,
 			);
 			path = Scripts;
@@ -1064,6 +1057,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = App/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(DisplayName)";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -1102,6 +1096,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = App/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(DisplayName)";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -1286,6 +1281,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = App/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(DisplayName)";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -1424,6 +1420,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = App/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(DisplayName)";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

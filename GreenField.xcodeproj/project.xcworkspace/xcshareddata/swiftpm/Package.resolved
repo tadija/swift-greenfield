@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-minions",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tadija/swift-minions.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "6eeffd168253f7551afb1348cc2bd7d6d9b770c5"
+      }
+    }
+  ],
+  "version" : 2
+}

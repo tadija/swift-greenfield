@@ -1,6 +1,6 @@
 #!/bin/sh
 
-FILE="Config/Env/BuildSettings.xcconfig"
+FILE="Config/BuildSettings.xcconfig"
 CMD="$1"
 KEY="$2"
 VALUE="$3"
