@@ -1,3 +1,6 @@
+# macOS
+*.DS_STORE
+
 # Xcode
 
 ## User settings
@@ -16,6 +19,5 @@ timeline.xctimeline
 playground.xcworkspace
 
 # Swift Package Manager
-
 .swiftpm
 .build/

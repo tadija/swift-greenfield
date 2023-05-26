@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Demo",
+    name: "Features",
 
     platforms: [
         .iOS(.v16),
@@ -11,7 +11,7 @@ let package = Package(
     ],
 
     products: [
-        .library(name: "Demo", targets: ["Demo"]),
+        .library(name: "Features", targets: ["Features"]),
     ],
 
     dependencies: [
@@ -19,7 +19,7 @@ let package = Package(
     ],
 
     targets: [
-        .target(name: "Demo", dependencies: ["Shared"]),
-        .testTarget(name: "DemoTests", dependencies: ["Demo"]),
+        .target(name: "Features", dependencies: ["Shared"]),
+        .testTarget(name: "FeaturesTests", dependencies: ["Features"]),
     ]
 )

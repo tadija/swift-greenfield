@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8B13FAF82958D17B00081389 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13FAF72958D17B00081389 /* Widgets.swift */; };
-		8B13FAFA2958D17B00081389 /* ExampleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13FAF92958D17B00081389 /* ExampleWidget.swift */; };
+		8B13FAFA2958D17B00081389 /* DemoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13FAF92958D17B00081389 /* DemoWidget.swift */; };
 		8B13FB002958D17C00081389 /* GreenFieldWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8B13FAF02958D17B00081389 /* GreenFieldWidgets.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8B13FB082958D5B600081389 /* ExampleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13FB072958D5B600081389 /* ExampleProvider.swift */; };
+		8B13FB082958D5B600081389 /* DemoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B13FB072958D5B600081389 /* DemoProvider.swift */; };
 		8B47181529DE327B009ED534 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8B47181729DE327B009ED534 /* Localizable.strings */; };
 		8B84D5FB29425AC8000232FA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84D5FA29425AC8000232FA /* App.swift */; };
 		8B84D5FF29425ACA000232FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B84D5FE29425ACA000232FA /* Assets.xcassets */; };
@@ -62,13 +62,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8B044EB52A03A78200BD979C /* Demo */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Demo; sourceTree = "<group>"; };
 		8B044EB62A03ACD000BD979C /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = "<group>"; };
 		8B13FAF02958D17B00081389 /* GreenFieldWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GreenFieldWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B13FAF72958D17B00081389 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
-		8B13FAF92958D17B00081389 /* ExampleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleWidget.swift; sourceTree = "<group>"; };
+		8B13FAF92958D17B00081389 /* DemoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoWidget.swift; sourceTree = "<group>"; };
 		8B13FAFD2958D17C00081389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B13FB072958D5B600081389 /* ExampleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleProvider.swift; sourceTree = "<group>"; };
+		8B13FB072958D5B600081389 /* DemoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoProvider.swift; sourceTree = "<group>"; };
 		8B47181229DCCF52009ED534 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		8B47181629DE327B009ED534 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8B47182029DF002B009ED534 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
@@ -98,6 +97,7 @@
 		8BCE33DA29E36EFB00C550A0 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = SOURCE_ROOT; };
 		8BCE33F129E55D2A00C550A0 /* .swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftgen.yml; sourceTree = SOURCE_ROOT; };
 		8BCE340129E582E300C550A0 /* Tools */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Tools; sourceTree = "<group>"; };
+		8BDAB3B72A280C2D002F4B23 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
 		8BDE00AB2957A4C600A87EE2 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		8BDE00AC2957AD3F00A87EE2 /* clear-derived-data.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "clear-derived-data.sh"; sourceTree = "<group>"; };
 		8BE50E5B29E6174B00ACE133 /* TopLevel */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TopLevel; sourceTree = "<group>"; };
@@ -141,27 +141,19 @@
 			isa = PBXGroup;
 			children = (
 				8B13FAF72958D17B00081389 /* Widgets.swift */,
-				8B13FB092958DB1300081389 /* Example */,
-				8B13FB0A2958F1C000081389 /* Resources */,
+				8B13FAFD2958D17C00081389 /* Info.plist */,
+				8B13FB092958DB1300081389 /* Demo */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
 		};
-		8B13FB092958DB1300081389 /* Example */ = {
+		8B13FB092958DB1300081389 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				8B13FB072958D5B600081389 /* ExampleProvider.swift */,
-				8B13FAF92958D17B00081389 /* ExampleWidget.swift */,
+				8B13FB072958D5B600081389 /* DemoProvider.swift */,
+				8B13FAF92958D17B00081389 /* DemoWidget.swift */,
 			);
-			path = Example;
-			sourceTree = "<group>";
-		};
-		8B13FB0A2958F1C000081389 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8B13FAFD2958D17C00081389 /* Info.plist */,
-			);
-			path = Resources;
+			path = Demo;
 			sourceTree = "<group>";
 		};
 		8B47181F29DF0013009ED534 /* SwiftLint */ = {
@@ -175,7 +167,7 @@
 		8B47182429DF0737009ED534 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				8B044EB52A03A78200BD979C /* Demo */,
+				8BDAB3B72A280C2D002F4B23 /* Features */,
 				8B044EB62A03ACD000BD979C /* Shared */,
 				8BCE340129E582E300C550A0 /* Tools */,
 			);
@@ -232,7 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				8B84D5FA29425AC8000232FA /* App.swift */,
-				8B84D625294263B3000232FA /* Resources */,
+				8B84D62C29427F06000232FA /* Info.plist */,
+				8B84D62629426439000232FA /* Entitlements */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -254,15 +247,6 @@
 				8B84D61829425ACA000232FA /* AppLaunchTests.swift */,
 			);
 			path = AppUITests;
-			sourceTree = "<group>";
-		};
-		8B84D625294263B3000232FA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8B84D62C29427F06000232FA /* Info.plist */,
-				8B84D62629426439000232FA /* Entitlements */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		8B84D62629426439000232FA /* Entitlements */ = {
@@ -552,8 +536,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B13FAF82958D17B00081389 /* Widgets.swift in Sources */,
-				8B13FAFA2958D17B00081389 /* ExampleWidget.swift in Sources */,
-				8B13FB082958D5B600081389 /* ExampleProvider.swift in Sources */,
+				8B13FAFA2958D17B00081389 /* DemoWidget.swift in Sources */,
+				8B13FB082958D5B600081389 /* DemoProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,7 +653,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Widgets/Resources/Info.plist;
+				INFOPLIST_FILE = Widgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(DisplayName)";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
@@ -748,7 +732,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Widgets/Resources/Info.plist;
+				INFOPLIST_FILE = Widgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(DisplayName)";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
@@ -821,7 +805,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Widgets/Resources/Info.plist;
+				INFOPLIST_FILE = Widgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(DisplayName)";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
@@ -894,7 +878,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Widgets/Resources/Info.plist;
+				INFOPLIST_FILE = Widgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(DisplayName)";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
@@ -1048,14 +1032,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "App/Resources/Entitlements/App-$(EnvID).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "App/Entitlements/App-$(EnvID).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = App/Resources/Info.plist;
+				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(DisplayName)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -1087,14 +1071,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "App/Resources/Entitlements/App-$(EnvID).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "App/Entitlements/App-$(EnvID).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = App/Resources/Info.plist;
+				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(DisplayName)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -1272,14 +1256,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "App/Resources/Entitlements/App-$(EnvID).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "App/Entitlements/App-$(EnvID).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = App/Resources/Info.plist;
+				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(DisplayName)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -1411,14 +1395,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "App/Resources/Entitlements/App-$(EnvID).entitlements";
+				CODE_SIGN_ENTITLEMENTS = "App/Entitlements/App-$(EnvID).entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = App/Resources/Info.plist;
+				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "$(DisplayName)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;

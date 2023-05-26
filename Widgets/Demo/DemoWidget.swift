@@ -2,7 +2,7 @@ import Shared
 import SwiftUI
 import WidgetKit
 
-struct ExampleWidget: Widget {
+struct DemoWidget: Widget {
     static var id: String {
         String(describing: self)
     }
@@ -10,17 +10,17 @@ struct ExampleWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(
             kind: Self.id,
-            provider: ExampleProvider()
+            provider: DemoProvider()
         ) { entry in
-            ExampleEntryView(entry: entry)
+            DemoEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Demo Widget")
+        .description("This is a widget demo.")
     }
 }
 
-struct ExampleEntryView: View {
-    var entry: ExampleProvider.Entry
+struct DemoEntryView: View {
+    var entry: DemoProvider.Entry
 
     var body: some View {
         VStack {
@@ -28,7 +28,7 @@ struct ExampleEntryView: View {
                 .font(.bold(20))
 
             Image(systemName: "globe")
-                .foregroundColor(Color("AccentColor"))
+                .foregroundColor(.semantic(.tintPrimary))
                 .padding(.vertical)
 
             Text(entry.date, style: .time)
@@ -37,9 +37,9 @@ struct ExampleEntryView: View {
     }
 }
 
-struct ExampleWidget_Previews: PreviewProvider {
+struct DemoWidget_Previews: PreviewProvider {
     static var previews: some View {
-        ExampleEntryView(entry: ExampleEntry(date: Date()))
+        DemoEntryView(entry: DemoEntry(date: Date()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

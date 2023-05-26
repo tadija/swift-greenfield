@@ -15,14 +15,14 @@ let package = Package(
     ],
 
     dependencies: [
-        .package(path: "../Packages/Demo"),
+        .package(path: "../Packages/Features"),
     ],
 
     targets: [
         .target(
             name: "TopLevel",
             dependencies: [
-                "Demo"
+                "Features"
             ]
         ),
 

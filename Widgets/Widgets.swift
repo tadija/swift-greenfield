@@ -4,6 +4,6 @@ import WidgetKit
 @main
 struct Widgets: WidgetBundle {
     var body: some Widget {
-        ExampleWidget()
+        DemoWidget()
     }
 }

@@ -1,4 +1,4 @@
-import Demo
+import Features
 import SwiftUI
 
 /// TopLevel namespace
