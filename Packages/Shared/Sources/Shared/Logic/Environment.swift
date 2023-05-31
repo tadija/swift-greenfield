@@ -7,19 +7,13 @@ import Minions
 public struct Env: CustomStringConvertible {
 
     /// Build configuration and custom config
-    public var buildConfig: BuildConfig {
-        .init()
-    }
+    @Dependency(\.buildConfig) var buildConfig
 
     /// A collection of information about current device
-    public var device: Device {
-        .init()
-    }
+    @Dependency(\.device) var device
 
     /// A mechanism to track current app version state
-    public var version: Version {
-        .init(buildConfig.bundleVersion)
-    }
+    @Dependency(\.version) var version
 
     /// String describing custom environment
     public var description: String {
@@ -112,17 +106,4 @@ extension Env {
         }
     }
 
-}
-
-// MARK: - Factory
-
-extension Dependencies {
-    public var env: Env {
-        get { Self[Env.self] }
-        set { Self[Env.self] = newValue }
-    }
-}
-
-extension Env: DependencyKey {
-    public static var liveValue = Env()
 }

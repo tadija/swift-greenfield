@@ -48,6 +48,8 @@ final class TestDemoDependency: DemoDependency {
     }
 }
 
+// MARK: - Factory
+
 struct DemoDependencyKey: DependencyKey {
     static var liveValue: DemoDependency = LiveDemoDependency()
     static var previewValue: DemoDependency = PreviewDemoDependency()

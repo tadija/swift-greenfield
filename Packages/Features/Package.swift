@@ -19,7 +19,12 @@ let package = Package(
     ],
 
     targets: [
-        .target(name: "Features", dependencies: ["Shared"]),
+        .target(
+            name: "Features",
+            dependencies: [
+                "Shared"
+            ]
+        ),
         .testTarget(name: "FeaturesTests", dependencies: ["Features"]),
     ]
 )

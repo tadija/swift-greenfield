@@ -1,3 +1,3 @@
-# Demo
+# Features
 
-This package is a simple demo feature.
+This package defines all feature modules consumed by the "TopLevel" package.

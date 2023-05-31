@@ -21,7 +21,9 @@ let package = Package(
     targets: [
         .target(
             name: "Shared",
-            dependencies: [.product(name: "Minions", package: "swift-minions")],
+            dependencies: [
+                .product(name: "Minions", package: "swift-minions")
+            ],
             resources: [
                 .copy("Resources/Assets.xcassets"),
                 .process("Resources/Fonts"),
