@@ -7,14 +7,16 @@ public extension Color {
 
     enum Semantic: String, CaseIterable {
         case backPrimary
+        case backSecondary
         case contentPrimary
+        case contentSecondary
         case tintPrimary
     }
 
     static func semantic(_ semantic: Semantic) -> Self {
         guard
-            let lightColor = lightTheme[semantic],
-            let darkColor = darkTheme[semantic]
+            let lightColor = lightTheme[semantic]?.swiftuiColor,
+            let darkColor = darkTheme[semantic]?.swiftuiColor
         else {
             assertionFailure("missing color for key: \(semantic)")
             return .red
@@ -27,32 +29,44 @@ public extension Color {
 // MARK: - Helpers
 
 private extension Color {
-    typealias Theme = [Semantic: Color]
+    typealias Theme = [Semantic: PaletteColor]
 
     static let lightTheme: Theme = [
-        .backPrimary: palette(.white),
-        .contentPrimary: palette(.black),
-        .tintPrimary: palette(.green)
+        .backPrimary: .white,
+        .backSecondary: .gray10,
+        .contentPrimary: .black,
+        .contentSecondary: .gray60,
+        .tintPrimary: .greenLight
     ]
 
     static let darkTheme: Theme = [
-        .backPrimary: palette(.black),
-        .contentPrimary: palette(.white),
-        .tintPrimary: palette(.green)
+        .backPrimary: .black,
+        .backSecondary: .gray90,
+        .contentPrimary: .white,
+        .contentSecondary: .gray20,
+        .tintPrimary: .greenDark
     ]
-
-    static func palette(_ key: ColorPalette) -> Self {
-        Color(hex: key.rawValue)
-    }
 }
 
-private enum ColorPalette: String, CaseIterable {
-    case white = "#FFFFFF"
-    case white90 = "#F5F5F5"
-    case gray50 = "#D3D3D3"
-    case gray = "#808080"
-    case green = "#56D437"
-    case black = "#000000"
+private extension PaletteColor {
+    static var allCases: [Self] {[
+        .black,
+        .white,
+        .gray10,
+        .gray20,
+        .gray60,
+        .gray90,
+        .greenLight,
+        .greenDark
+    ]}
+
+    var swiftuiColor: Color {
+        RGBAColor(rgba: rgbaValue).toColor()
+    }
+
+    var hex: String {
+        color.cgColor.toHex()
+    }
 }
 
 // MARK: - View
@@ -89,7 +103,7 @@ public struct ColorsView: View {
     private func makeSection<T: View>(_ title: String, content: () -> T) -> some View {
         VStack {
             Text(title)
-                .font(.light(28))
+                .font(.custom(.title))
 
             content()
         }
@@ -102,12 +116,12 @@ public struct ColorsView: View {
             GridItem(.flexible()),
             GridItem(.flexible())
         ]) {
-            ForEach(ColorPalette.allCases, id: \.rawValue) { key in
+            ForEach(PaletteColor.allCases, id: \.rgbaValue) { paletteColor in
                 VStack {
-                    ColorSquare(color: .palette(key))
+                    ColorSquare(color: paletteColor.swiftuiColor)
 
-                    Text(key.rawValue)
-                        .font(.bold(12))
+                    Text(paletteColor.hex)
+                        .font(.custom(.footnote))
                 }
             }
         }
@@ -120,7 +134,7 @@ public struct ColorsView: View {
                 Spacer()
                 Text("Dark")
             }
-            .font(.bold(18))
+            .font(.custom(.headline))
 
             ForEach(Color.Semantic.allCases, id: \.rawValue) { color in
                 HStack {
@@ -129,7 +143,7 @@ public struct ColorsView: View {
 
                     Spacer()
                     Text(color.rawValue)
-                        .font(.bold(16))
+                        .font(.custom(.caption2))
                     Spacer()
 
                     ColorSquare(color: .semantic(color))
@@ -165,7 +179,7 @@ struct ColorsView_Previews: PreviewProvider {
     }
 
     static var iOS: some View {
-        NavigationView {
+        NavigationStack {
             ColorsView()
         }
         .previewLayout(.fixed(width: 375, height: 900))

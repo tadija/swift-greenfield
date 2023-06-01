@@ -1,6 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
+      "filename" : "minion.png",
       "idiom" : "universal"
     }
   ],

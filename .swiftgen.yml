@@ -1,8 +1,36 @@
+input_dir: Packages/Shared/Sources/Shared/Resources
+output_dir: Packages/Shared/Sources/Shared/Generated/
+
 strings:
   inputs:
-    - Resources/en.lproj/Localizable.strings
+    - Localizable/en.lproj
   outputs:
     - templateName: structured-swift5
-      output: Packages/Shared/Sources/Shared/Resources/Generated/Localizable.swift
+      output: Localizable.swift
       params:
         publicAccess: true
+
+xcassets:
+  inputs: Assets.xcassets
+  outputs:
+    templateName: swift5
+    output: Assets.swift
+    params:
+      publicAccess: true
+
+colors:
+  inputs: Colors.json
+  outputs:
+    templateName: swift5
+    output: Colors.swift
+    params:
+      colorAliasName: PlatformColor
+      enumName: PaletteColor
+
+fonts:
+  inputs: Fonts
+  outputs:
+    templateName: swift5
+    output: Fonts.swift
+    params:
+      fontAliasName: PlatformFont

@@ -9,7 +9,6 @@ public struct DemoView: View {
     public var body: some View {
         VStack {
             Text(L10n.helloWorld)
-                .font(.bold(40))
 
             VStack {
                 Image(systemName: "globe")
@@ -17,12 +16,10 @@ public struct DemoView: View {
                     .foregroundColor(.semantic(.tintPrimary))
 
                 Text(vm.currentContext)
-                    .font(.regular(24))
             }
             .padding()
 
             Text(vm.environmentDescription)
-                .font(.light(16))
                 .padding()
         }
     }

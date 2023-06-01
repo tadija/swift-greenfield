@@ -5,20 +5,22 @@ import SwiftUI
 public struct PrimaryButton: ButtonStyle {
     @Environment(\.isEnabled) private var isEnabled
 
+    var tint: Color
+
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .commonButtonStyle(
                 configuration: configuration,
                 isEnabled: isEnabled,
-                background: Capsule().fill(Color.semantic(.tintPrimary)),
+                background: Capsule().fill(tint),
                 foregroundColor: .semantic(.backPrimary)
             )
     }
 }
 
 extension ButtonStyle where Self == PrimaryButton {
-    public static var primary: Self {
-        .init()
+    public static func primary(tint: Color = .semantic(.tintPrimary)) -> Self {
+        .init(tint: tint)
     }
 }
 
@@ -27,20 +29,22 @@ extension ButtonStyle where Self == PrimaryButton {
 public struct SecondaryButton: ButtonStyle {
     @Environment(\.isEnabled) private var isEnabled
 
+    var tint: Color
+
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .commonButtonStyle(
                 configuration: configuration,
                 isEnabled: isEnabled,
-                background: Capsule().strokeBorder(Color.semantic(.tintPrimary), lineWidth: 2),
-                foregroundColor: .semantic(.tintPrimary)
+                background: Capsule().strokeBorder(tint, lineWidth: 2),
+                foregroundColor: tint
             )
     }
 }
 
 extension ButtonStyle where Self == SecondaryButton {
-    public static var secondary: Self {
-        .init()
+    public static func secondary(tint: Color = .semantic(.tintPrimary)) -> Self {
+        .init(tint: tint)
     }
 }
 
@@ -49,21 +53,23 @@ extension ButtonStyle where Self == SecondaryButton {
 public struct TertiaryButton: ButtonStyle {
     @Environment(\.isEnabled) private var isEnabled
 
+    var tint: Color
+
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .commonButtonStyle(
                 configuration: configuration,
                 isEnabled: isEnabled,
                 background: Color.clear,
-                foregroundColor: .semantic(.tintPrimary)
+                foregroundColor: tint
             )
             .underline()
     }
 }
 
 extension ButtonStyle where Self == TertiaryButton {
-    public static var tertiary: Self {
-        .init()
+    public static func tertiary(tint: Color = .semantic(.tintPrimary)) -> Self {
+        .init(tint: tint)
     }
 }
 
@@ -76,9 +82,10 @@ private extension View {
         background: T,
         foregroundColor: Color
     ) -> some View {
-        font(.bold(18))
-            .padding(.vertical, 12)
-            .padding(.horizontal, 20)
+        font(.custom(.bold, 21))
+            .fixedSize()
+            .padding()
+            .padding(.horizontal)
             .background(background)
             .foregroundColor(foregroundColor)
             .contentShape(Capsule())
@@ -103,23 +110,38 @@ private extension ButtonStyleConfiguration {
 
 // MARK: - Previews
 
-struct ButtonStyles_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack(spacing: 20) {
-            buttons
-            Divider()
-            buttons.disabled(true)
+public struct ButtonStyles_Previews: PreviewProvider {
+    public static var previews: some View {
+        NavigationStack {
+            content
         }
-        .padding()
         .previewLayout(.sizeThatFits)
     }
 
-    static var buttons: some View {
-        VStack(spacing: 20) {
-            button.buttonStyle(.primary)
-            button.buttonStyle(.secondary)
-            button.buttonStyle(.tertiary)
+    public static var content: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Enabled")
+                buttons
+
+                Divider()
+
+                Text("Disabled")
+                buttons.disabled(true)
+            }
+            .font(.custom(.headline))
+            .padding()
         }
+        .navigationTitle("Buttons")
+    }
+
+    static var buttons: some View {
+        VStack(alignment: .center, spacing: 20) {
+            button.buttonStyle(.primary())
+            button.buttonStyle(.secondary())
+            button.buttonStyle(.tertiary())
+        }
+        .frame(maxWidth: .infinity)
     }
 
     static var button: some View {

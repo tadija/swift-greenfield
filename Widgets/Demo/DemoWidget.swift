@@ -25,14 +25,14 @@ struct DemoEntryView: View {
     var body: some View {
         VStack {
             Text(L10n.helloWorld)
-                .font(.bold(20))
+                .font(.custom(.title3))
 
             Image(systemName: "globe")
                 .foregroundColor(.semantic(.tintPrimary))
                 .padding(.vertical)
 
             Text(entry.date, style: .time)
-                .font(.light(20))
+                .font(.custom(.title2))
         }
     }
 }

@@ -5,6 +5,8 @@ import PackageDescription
 let package = Package(
     name: "Shared",
 
+    defaultLocalization: "en",
+
     platforms: [
         .iOS(.v16),
         .macOS(.v13),
@@ -25,8 +27,8 @@ let package = Package(
                 .product(name: "Minions", package: "swift-minions")
             ],
             resources: [
-                .copy("Resources/Assets.xcassets"),
                 .process("Resources/Fonts"),
+                .copy("Resources/Assets.xcassets"),
             ],
             swiftSettings: [
                 .unsafeFlags(["-Xfrontend", "-application-extension"])
