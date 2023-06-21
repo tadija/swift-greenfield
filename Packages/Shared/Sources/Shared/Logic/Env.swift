@@ -7,13 +7,13 @@ import Minions
 public struct Env: CustomStringConvertible {
 
     /// Build configuration and custom config
-    @Dependency(\.buildConfig) var buildConfig
+    @Dependency(\.buildConfig) public private(set) var buildConfig
 
     /// A collection of information about current device
-    @Dependency(\.device) var device
+    @Dependency(\.device) public private(set) var device
 
     /// A mechanism to track current app version state
-    @Dependency(\.version) var version
+    @Dependency(\.version) public private(set) var version
 
     /// String describing custom environment
     public var description: String {

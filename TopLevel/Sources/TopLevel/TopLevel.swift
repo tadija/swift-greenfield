@@ -9,7 +9,7 @@ public enum TopLevel {}
 public extension TopLevel {
 
     static func makeAppView() -> some View {
-        DemoView()
+        RootView()
     }
 
 }

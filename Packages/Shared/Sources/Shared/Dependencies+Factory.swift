@@ -53,3 +53,29 @@ extension Dependencies {
         set { Self[Env.self] = newValue }
     }
 }
+
+// MARK: - Haptics
+
+extension Haptics: DependencyKey {
+    public static var liveValue = Haptics()
+}
+
+extension Dependencies {
+    public var haptics: Haptics {
+        get { Self[Haptics.self] }
+        set { Self[Haptics.self] = newValue }
+    }
+}
+
+// MARK: - Disk
+
+extension Disk: DependencyKey {
+    public static var liveValue = Disk()
+}
+
+extension Dependencies {
+    public var disk: Disk {
+        get { Self[Disk.self] }
+        set { Self[Disk.self] = newValue }
+    }
+}

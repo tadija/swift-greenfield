@@ -13,7 +13,7 @@ final class AppUITests: XCTestCase {
     }
 
     func testExample() throws {
-        XCTAssertTrue(app.staticTexts["test"].exists)
+        XCTAssertFalse(app.staticTexts["test"].exists)
     }
 
 }

@@ -9,7 +9,11 @@
 		<key>envID</key>
 		<string>$(EnvID)</string>
 	</dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>CFBundleAllowMixedLocalizations</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>in order to take a photo</string>
 </dict>
 </plist>
