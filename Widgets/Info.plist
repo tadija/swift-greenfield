@@ -6,6 +6,8 @@
 	<dict>
 		<key>buildConfiguration</key>
 		<string>$(CONFIGURATION)</string>
+		<key>baseBundleID</key>
+		<string>$(BaseBundleID)</string>
 		<key>envID</key>
 		<string>$(EnvID)</string>
 	</dict>

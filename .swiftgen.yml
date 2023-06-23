@@ -3,10 +3,10 @@ output_dir: Packages/Shared/Sources/Shared/Generated/
 
 strings:
   inputs:
-    - Localizable/en.lproj
+    - L10n/en.lproj
   outputs:
     - templateName: structured-swift5
-      output: Localizable.swift
+      output: L10n.swift
       params:
         publicAccess: true
 

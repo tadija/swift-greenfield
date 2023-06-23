@@ -1,5 +1,11 @@
 # Release Notes
 
+## 0.2.1
+
+- Rename / reorganize files
+- Generate Assets, Colors, Fonts, L10n
+- Add a few demos using various "Minions"
+
 ## 0.2.0
 
 - Setup "Minions" package

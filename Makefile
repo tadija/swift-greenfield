@@ -1,5 +1,6 @@
 SCRIPTS="./Scripts"
-BUILD_SETTINGS="build-settings.sh"
+
+BUILD_SETTINGS="gf-build-settings.sh"
 
 .PHONY: help
 help: ## display help
@@ -26,8 +27,15 @@ clear-spm: ## clear spm cache
 rename-proj: ## rename project
 	@$(SCRIPTS)/rename-xcodeproj.sh
 
-minions-local: ## minions r2l
-	@$(SCRIPTS)/minions.sh r2l
+minions-local: ## make minions local
+	@$(SCRIPTS)/gf-minions.sh r2l
 
-minions-remote: ## minions l2r
-	@$(SCRIPTS)/minions.sh l2r
+minions-remote: ## make minions remote
+	@$(SCRIPTS)/gf-minions.sh l2r
+
+minions-update: ## update local minions
+	@make minions-remote
+	@make minions-local
+
+gf-update: ## update from original repo
+	@$(SCRIPTS)/gf-update.sh

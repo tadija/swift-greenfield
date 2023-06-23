@@ -78,12 +78,14 @@ extension Env {
     public struct Config: Codable, CustomStringConvertible {
 
         public let buildConfiguration: String
+        public let baseBundleID: String
         public let envID: Env.ID
 
         /// String describing custom environment config
         public var description: String {
             """
             build configuration: \(buildConfiguration)
+            base bundle id: \(baseBundleID)
             environment id: \(envID.rawValue)
             """
         }
@@ -98,6 +100,7 @@ extension Env {
                 /// - Note: Xcode does not propagate custom config / build configurations to Swift packages.
                 return Config(
                     buildConfiguration: "Debug",
+                    baseBundleID: "dev.GreenField",
                     envID: .dev
                 )
             } else {

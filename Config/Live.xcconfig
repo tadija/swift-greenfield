@@ -3,11 +3,11 @@
 // Apple Developer Team ID
 TeamID = VL46Q749LJ
 
+// Base Bundle ID
+BaseBundleID = live.GreenField
+
 // Environment ID
 EnvID = Live
 
-// Bundle ID Prefix
-BaseBundleID = live.GreenField
-
-// Name
+// Display Name
 DisplayName = GreenField

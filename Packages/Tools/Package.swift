@@ -21,8 +21,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "SwiftLintBinary",
-            url: "https://github.com/realm/SwiftLint/releases/download/0.51.0/SwiftLintBinary-macos.artifactbundle.zip",
-            checksum: "9fbfdf1c2a248469cfbe17a158c5fbf96ac1b606fbcfef4b800993e7accf43ae"
+            url: "https://github.com/realm/SwiftLint/releases/download/0.52.3/SwiftLintBinary-macos.artifactbundle.zip",
+            checksum: "05cbe202aae733ce395de68557614b0dfea394093d5ee53f57436e4d71bbe12f"
         ),
         .plugin(
             name: "SwiftLint",
@@ -48,8 +48,8 @@ let package = Package(
 
         .binaryTarget(
             name: "SwiftFormatBinary",
-            url: "https://github.com/nicklockwood/SwiftFormat/releases/download/0.51.4/swiftformat.artifactbundle.zip",
-            checksum: "6e86973183fe1ed1b779a12731f901e8630bf3583ae52e54856bcc8d944568f8"
+            url: "https://github.com/nicklockwood/SwiftFormat/releases/download/0.51.12/swiftformat.artifactbundle.zip",
+            checksum: "0310600634dda94aeaae6cf305daa6cf2612712dd5760b0791b182db98d0521e"
         ),
         .plugin(
             name: "SwiftFormat",

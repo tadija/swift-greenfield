@@ -8,6 +8,7 @@ MLOCAL=".package(path: \"../Minions\")"
 MREMOTED=".product(name: \"Minions\", package: \"swift-minions\")"
 MLOCALD="\"Minions\""
 
+# r2l (remote to local) will clone remote Minions and make them a local package.
 function r2l {
     git clone https://github.com/tadija/swift-minions.git Packages/Minions
     rm -rf Packages/Minions/.git
@@ -15,6 +16,7 @@ function r2l {
     sed -i '' "s|${MREMOTED}|${MLOCALD}|g" Packages/Shared/Package.swift
 }
 
+# l2r (local to remote) will remove local Minions and make them a remote dependency.
 function l2r {
     rm -rf Packages/Minions
     sed -i '' "s|${MLOCAL}|${MREMOTE}|g" Packages/Shared/Package.swift

@@ -68,8 +68,6 @@
 		8B13FB072958D5B600081389 /* DemoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoProvider.swift; sourceTree = "<group>"; };
 		8B47181229DCCF52009ED534 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		8B47182029DF002B009ED534 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
-		8B5FD0BC2A16D32A007F8357 /* minions.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = minions.sh; sourceTree = "<group>"; };
-		8B5FD0BD2A16EA46007F8357 /* clear-spm-cache.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "clear-spm-cache.sh"; sourceTree = "<group>"; };
 		8B5FD0C02A17D087007F8357 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		8B84D5F729425AC8000232FA /* GreenField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreenField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B84D5FA29425AC8000232FA /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -87,17 +85,14 @@
 		8B84D63529428289000232FA /* App-Live.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "App-Live.entitlements"; sourceTree = "<group>"; };
 		8BB78F602944EC8600C9B014 /* AppTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = AppTests.xctestplan; path = AppTests/AppTests.xctestplan; sourceTree = SOURCE_ROOT; };
 		8BB78F702944F0D900C9B014 /* AppUITests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = AppUITests.xctestplan; sourceTree = "<group>"; };
-		8BB78F712945073900C9B014 /* build-settings.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "build-settings.sh"; sourceTree = "<group>"; };
-		8BB78F72294507BD00C9B014 /* rename-xcodeproj.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "rename-xcodeproj.sh"; sourceTree = "<group>"; };
 		8BB78F7329450C3200C9B014 /* BuildSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BuildSettings.xcconfig; sourceTree = "<group>"; };
-		8BC9B4F929D4FB8800994F78 /* bootstrap.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = bootstrap.sh; sourceTree = "<group>"; };
 		8BCE33DA29E36EFB00C550A0 /* .swiftformat */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftformat; sourceTree = SOURCE_ROOT; };
 		8BCE33F129E55D2A00C550A0 /* .swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftgen.yml; sourceTree = SOURCE_ROOT; };
 		8BCE340129E582E300C550A0 /* Tools */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Tools; sourceTree = "<group>"; };
 		8BDAB3B72A280C2D002F4B23 /* Features */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Features; sourceTree = "<group>"; };
 		8BDE00AB2957A4C600A87EE2 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		8BDE00AC2957AD3F00A87EE2 /* clear-derived-data.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "clear-derived-data.sh"; sourceTree = "<group>"; };
 		8BE50E5B29E6174B00ACE133 /* TopLevel */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TopLevel; sourceTree = "<group>"; };
+		8BEC02902A44F19100411605 /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = text; path = Scripts; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +194,7 @@
 				8B13FAF62958D17B00081389 /* Widgets */,
 				8B47182429DF0737009ED534 /* Packages */,
 				8BCE340629E5A21C00C550A0 /* Resources */,
-				8BB78F5E2944DAF500C9B014 /* Scripts */,
+				8BEC02902A44F19100411605 /* Scripts */,
 				8BDE00AB2957A4C600A87EE2 /* Makefile */,
 				8B47181229DCCF52009ED534 /* CHANGELOG.md */,
 				8B84D5F829425AC8000232FA /* Products */,
@@ -267,19 +262,6 @@
 				8B47183B29DF83BE009ED534 /* SwiftFormat */,
 			);
 			path = Config;
-			sourceTree = "<group>";
-		};
-		8BB78F5E2944DAF500C9B014 /* Scripts */ = {
-			isa = PBXGroup;
-			children = (
-				8BC9B4F929D4FB8800994F78 /* bootstrap.sh */,
-				8BB78F712945073900C9B014 /* build-settings.sh */,
-				8BDE00AC2957AD3F00A87EE2 /* clear-derived-data.sh */,
-				8B5FD0BD2A16EA46007F8357 /* clear-spm-cache.sh */,
-				8B5FD0BC2A16D32A007F8357 /* minions.sh */,
-				8BB78F72294507BD00C9B014 /* rename-xcodeproj.sh */,
-			);
-			path = Scripts;
 			sourceTree = "<group>";
 		};
 		8BCE33DE29E4B42100C550A0 /* SwiftGen */ = {
@@ -483,7 +465,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# skip running during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n# skip running during preview builds\nif [ $ENABLE_PREVIEWS = \"YES\" ]; then exit 0; fi\n\nARTIFACT_BUNDLE=\"$BUILD_DIR/../../SourcePackages/artifacts/tools/SwiftFormatBinary/swiftformat.artifactbundle\"\nTOOL=\"$ARTIFACT_BUNDLE/swiftformat-0.51.4-macos/bin/swiftformat\"\n\n$TOOL \"$PROJECT_DIR\" --config \"$PROJECT_DIR/.swiftformat\"\n";
+			shellScript = "# skip running during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n# skip running during preview builds\nif [ $ENABLE_PREVIEWS = \"YES\" ]; then exit 0; fi\n\nARTIFACT_BUNDLE=\"$BUILD_DIR/../../SourcePackages/artifacts/tools/SwiftFormatBinary/swiftformat.artifactbundle\"\nTOOL=\"$ARTIFACT_BUNDLE/swiftformat-0.51.12-macos/bin/swiftformat\"\n\n$TOOL \"$PROJECT_DIR\" --config \"$PROJECT_DIR/.swiftformat\"\n";
 		};
 		8BC3BB9529F090940028B630 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -502,7 +484,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# skip running during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n# skip running during preview builds\nif [ $ENABLE_PREVIEWS = \"YES\" ]; then exit 0; fi\n\nARTIFACT_BUNDLE=\"$BUILD_DIR/../../SourcePackages/artifacts/tools/SwiftLintBinary/SwiftLintBinary.artifactbundle\"\nTOOL=\"$ARTIFACT_BUNDLE/swiftlint-0.51.0-macos/bin/swiftlint\"\n\n$TOOL \"$PROJECT_DIR\" --config \"$PROJECT_DIR/.swiftlint.yml\"\n";
+			shellScript = "# skip running during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n# skip running during preview builds\nif [ $ENABLE_PREVIEWS = \"YES\" ]; then exit 0; fi\n\nARTIFACT_BUNDLE=\"$BUILD_DIR/../../SourcePackages/artifacts/tools/SwiftLintBinary/SwiftLintBinary.artifactbundle\"\nTOOL=\"$ARTIFACT_BUNDLE/swiftlint-0.52.3-macos/bin/swiftlint\"\n\n$TOOL \"$PROJECT_DIR\" --config \"$PROJECT_DIR/.swiftlint.yml\"\n";
 		};
 		8BCE33E729E4BABE00C550A0 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
