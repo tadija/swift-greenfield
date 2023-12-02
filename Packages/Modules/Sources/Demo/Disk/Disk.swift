@@ -4,34 +4,25 @@ import SwiftUI
 
 public struct DiskView: View {
 
-    @ObservedObject var vm: DiskViewModel
+    @State private var vm: DiskViewModel
 
     public init(vm: DiskViewModel = .init()) {
         self.vm = vm
     }
 
     public var body: some View {
-        NavigationStack {
-            content
-                .navigationTitle("Disk Demo")
-                .toolbar { ToolbarItem(content: makeToolbarItem) }
-                .sheet(isPresented: $vm.state.error.isNotNil()) {
-                    if let error = vm.state.error {
-                        ErrorView(error: error)
-                            .presentationDetents([.fraction(0.3)])
-                    }
+        content
+            .navigationTitle("Disk")
+            .toolbar { ToolbarItem(content: makeToolbarItem) }
+            .sheet(isPresented: $vm.state.error.isNotNil()) {
+                if let error = vm.state.error {
+                    ErrorView(error: error)
+                        .environment(vm)
+                        .presentationDetents([.fraction(0.3)])
                 }
-                .task { await vm.loadContent() }
-        }
-        .environmentObject(vm)
-        .tint(.semantic(.tintPrimary))
-    }
-
-    @ViewBuilder
-    private func makeToolbarItem() -> some View {
-        if vm.state.isLoading {
-            ProgressView().tint(.semantic(.contentSecondary))
-        }
+            }
+            .task { await vm.loadContent() }
+            .tint(.semantic(.tintPrimary))
     }
 
     @ViewBuilder
@@ -41,14 +32,24 @@ public struct DiskView: View {
                 .font(.custom(.title3))
                 .foregroundColor(.semantic(.contentSecondary))
         } else {
-            ImageList().navigationDestination(for: URL.self) { url in
-                ImageView(imageURL: url)
-            }
+            ImageList()
+                .environment(vm)
+                .navigationDestination(for: URL.self) { url in
+                    ImageView(imageURL: url)
+                        .environment(vm)
+                }
+        }
+    }
+
+    @ViewBuilder
+    private func makeToolbarItem() -> some View {
+        if vm.state.isLoading {
+            ProgressView().tint(.semantic(.contentSecondary))
         }
     }
 
     private struct ImageList: View {
-        @EnvironmentObject var vm: DiskViewModel
+        @Environment(DiskViewModel.self) private var vm: DiskViewModel
 
         var body: some View {
             List {
@@ -83,7 +84,7 @@ public struct DiskView: View {
     }
 
     private struct ImageRow: View {
-        @EnvironmentObject var vm: DiskViewModel
+        @Environment(DiskViewModel.self) private var vm: DiskViewModel
 
         var url: URL
 
@@ -126,7 +127,7 @@ public struct DiskView: View {
     }
 
     private struct ImageView: View {
-        @EnvironmentObject var vm: DiskViewModel
+        @Environment(DiskViewModel.self) private var vm: DiskViewModel
 
         var imageURL: URL
 
@@ -148,7 +149,7 @@ public struct DiskView: View {
         @ViewBuilder
         private var content: some View {
             if let image {
-                image.resizable().scaledToFill()
+                image.resizable().scaledToFit()
             } else {
                 ProgressView().tint(.semantic(.contentSecondary))
             }
@@ -156,7 +157,7 @@ public struct DiskView: View {
     }
 
     private struct ErrorView: View {
-        @EnvironmentObject var vm: DiskViewModel
+        @Environment(DiskViewModel.self) private var vm: DiskViewModel
 
         var error: Error
 
@@ -196,12 +197,12 @@ public struct DiskViewState {
 
     var emptyContentText: String {
         if isLoading {
-            return "Loading..."
+            "Loading..."
         } else {
             if error == nil {
-                return "Nothing here yet."
+                "Nothing here yet."
             } else {
-                return ""
+                ""
             }
         }
     }
@@ -247,16 +248,18 @@ extension DiskViewState {
 
 // MARK: - Model
 
-public final class DiskViewModel: ObservableObject {
+@Observable
+public final class DiskViewModel {
+    @ObservationIgnored
     @Dependency(\.dataSource) private var dataSource
 
-    @Published var state: DiskViewState
+    var state: DiskViewState
 
     public init(_ state: DiskViewState = .init()) {
         self.state = state
     }
 
-    var _skipLoad: Bool = false
+    fileprivate var _skipLoad: Bool = ProcessInfo.isXcodePreview
 
     // MARK: API
 
@@ -413,24 +416,20 @@ extension Dependencies {
 
 // MARK: - Previews
 
-struct DiskView_Previews: PreviewProvider {
-    static var previews: some View {
-        make(.mockContent(DataSource.mockURLS()))
-            .previewDisplayName("Content")
-
-        make(.mockContent([]))
-            .previewDisplayName("Empty")
-
-        make(.mockLoading())
-            .previewDisplayName("Loading")
-
-        make(.mockError("preview test error"))
-            .previewDisplayName("Error")
+#Preview("Content") {
+    NavigationStack {
+        DiskView(vm: .init(.mockContent(DataSource.mockURLS())))
     }
+}
 
-    static func make(_ state: DiskViewState) -> some View {
-        let vm = DiskViewModel(state)
-        vm._skipLoad = true
-        return DiskView(vm: vm)
-    }
+#Preview("Empty") {
+    DiskView(vm: .init(.mockContent([])))
+}
+
+#Preview("Loading") {
+    DiskView(vm: .init(.mockLoading()))
+}
+
+#Preview("Error") {
+    DiskView(vm: .init(.mockError("preview test error")))
 }

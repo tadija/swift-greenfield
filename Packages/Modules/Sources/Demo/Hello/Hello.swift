@@ -2,12 +2,11 @@ import Shared
 import SwiftUI
 
 public struct HelloView: View {
+
     public init() {}
 
     public var body: some View {
-        NavigationStack {
-            content.navigationTitle("GreenField Demo")
-        }
+        content.navigationTitle("Hello")
     }
 
     private var content: some View {
@@ -18,14 +17,15 @@ public struct HelloView: View {
                 .foregroundColor(.semantic(.backPrimary))
 
             Asset.minion.swiftUIImage
+                .resizable()
+                .scaledToFit()
         }
+        .padding(.vertical)
     }
 }
 
 // MARK: - Previews
 
-struct HelloView_Previews: PreviewProvider {
-    static var previews: some View {
-        HelloView()
-    }
+#Preview {
+    HelloView()
 }

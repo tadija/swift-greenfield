@@ -1,4 +1,4 @@
---swiftversion 5.8
+--swiftversion 5.9
 
 # excluded directories and files
 
@@ -33,7 +33,7 @@
 --rules redundantSelf
 
 # Sort import statements alphabetically.
---rules sortedImports
+--rules sortImports
 
 # Mark unused function arguments with _, but only in closures. Defined with `--unusedArguments closure-only`.
 --rules unusedArguments

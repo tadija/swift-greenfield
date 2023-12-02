@@ -6,14 +6,12 @@ public struct DebugView: View {
     public init() {}
 
     public var body: some View {
-        NavigationStack {
-            content
-                .navigationTitle("Debug Demo")
-                .navigationDestination(for: Route.self) { route in
-                    route.makeDestination()
-                }
-        }
-        .tint(.semantic(.tintPrimary))
+        content
+            .navigationTitle("Debug")
+            .navigationDestination(for: Route.self) { route in
+                route.makeDestination()
+            }
+            .tint(.semantic(.tintPrimary))
     }
 
     private var content: some View {
@@ -72,15 +70,15 @@ private extension DebugView.Route {
         case .fonts:
             FontsView()
         case .buttons:
-            ButtonStyles_Previews.content
+            ButtonsView()
         }
     }
 }
 
 // MARK: - Previews
 
-struct DebugView_Previews: PreviewProvider {
-    static var previews: some View {
+#Preview {
+    NavigationStack {
         DebugView()
     }
 }

@@ -34,12 +34,16 @@ struct DemoEntryView: View {
             Text(entry.date, style: .time)
                 .font(.custom(.title2))
         }
+        .containerBackground(for: .widget) {
+            Color.semantic(.backPrimary)
+        }
     }
 }
 
-struct DemoWidget_Previews: PreviewProvider {
-    static var previews: some View {
-        DemoEntryView(entry: DemoEntry(date: Date()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
-    }
+// MARK: - Previews
+
+#Preview(as: .systemSmall) {
+    DemoWidget()
+} timeline: {
+    DemoEntry(date: Date())
 }

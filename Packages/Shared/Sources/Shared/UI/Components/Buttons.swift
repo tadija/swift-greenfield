@@ -101,24 +101,19 @@ private extension View {
 private extension ButtonStyleConfiguration {
     func resolveOpacity(isEnabled: Bool) -> CGFloat {
         if isEnabled {
-            return isPressed ? 0.5 : 1
+            isPressed ? 0.5 : 1
         } else {
-            return 0.3
+            0.3
         }
     }
 }
 
 // MARK: - Previews
 
-public struct ButtonStyles_Previews: PreviewProvider {
-    public static var previews: some View {
-        NavigationStack {
-            content
-        }
-        .previewLayout(.sizeThatFits)
-    }
+public struct ButtonsView: View {
+    public init() {}
 
-    public static var content: some View {
+    public var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 Text("Enabled")
@@ -135,7 +130,7 @@ public struct ButtonStyles_Previews: PreviewProvider {
         .navigationTitle("Buttons")
     }
 
-    static var buttons: some View {
+    var buttons: some View {
         VStack(alignment: .center, spacing: 20) {
             button.buttonStyle(.primary())
             button.buttonStyle(.secondary())
@@ -144,10 +139,16 @@ public struct ButtonStyles_Previews: PreviewProvider {
         .frame(maxWidth: .infinity)
     }
 
-    static var button: some View {
+    var button: some View {
         Button(action: {}, label: {
             Text("Button Text")
                 .frame(maxWidth: .infinity)
         })
+    }
+}
+
+#Preview {
+    NavigationStack {
+        ButtonsView()
     }
 }

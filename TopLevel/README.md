@@ -1,3 +1,3 @@
 # TopLevel
 
-This package orchestrates other packages and defines libraries used by the main project.
+This package defines libraries used by the main project by assembling available components.

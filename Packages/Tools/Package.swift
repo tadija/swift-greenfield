@@ -1,4 +1,4 @@
-// swift-tools-version: 5.8
+// swift-tools-version: 5.9
 
 import PackageDescription
 
@@ -21,8 +21,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "SwiftLintBinary",
-            url: "https://github.com/realm/SwiftLint/releases/download/0.52.3/SwiftLintBinary-macos.artifactbundle.zip",
-            checksum: "05cbe202aae733ce395de68557614b0dfea394093d5ee53f57436e4d71bbe12f"
+            url: "https://github.com/realm/SwiftLint/releases/download/0.54.0/SwiftLintBinary-macos.artifactbundle.zip",
+            checksum: "963121d6babf2bf5fd66a21ac9297e86d855cbc9d28322790646b88dceca00f1"
         ),
         .plugin(
             name: "SwiftLint",
@@ -48,8 +48,8 @@ let package = Package(
 
         .binaryTarget(
             name: "SwiftFormatBinary",
-            url: "https://github.com/nicklockwood/SwiftFormat/releases/download/0.51.12/swiftformat.artifactbundle.zip",
-            checksum: "0310600634dda94aeaae6cf305daa6cf2612712dd5760b0791b182db98d0521e"
+            url: "https://github.com/nicklockwood/SwiftFormat/releases/download/0.52.10/swiftformat.artifactbundle.zip",
+            checksum: "6c11b2d50ee6f914ee87e891ad4e4a32e1f82993a8ccecaebd3285ac767b86ce"
         ),
         .plugin(
             name: "SwiftFormat",

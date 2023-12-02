@@ -5,23 +5,21 @@ import SwiftUI
 
 public struct CameraView: View {
 
-    @ObservedObject var vm: CameraViewModel
+    @State private var vm: CameraViewModel
 
     public init(vm: CameraViewModel = .init()) {
         self.vm = vm
     }
 
     public var body: some View {
-        NavigationStack {
-            content
-                .navigationTitle("Camera Demo")
-        }
-        .onAppear { Task { await vm.startCamera() } }
-        .onDisappear { Task { await vm.stopCamera() } }
+        content
+            .navigationTitle("Camera")
+            .onAppear { Task { await vm.startCamera() } }
+            .onDisappear { Task { await vm.stopCamera() } }
     }
 
     private var content: some View {
-        VStack(spacing: 44) {
+        VStack {
             placeholder
 
             mainControls
@@ -34,13 +32,14 @@ public struct CameraView: View {
 
     private var placeholder: some View {
         stateView
-            .frame(width: 256, height: 256)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .cornerRadius(12)
             .clipped()
             .overlay(
                 RoundedRectangle(cornerRadius: 12)
                     .stroke(Color.semantic(.tintPrimary), lineWidth: 6)
             )
+            .padding()
     }
 
     @ViewBuilder
@@ -51,9 +50,9 @@ public struct CameraView: View {
         case .unauthorized:
             makeUnauthorizedView()
         case .camera:
-            Camera.CapturePreview().environmentObject(vm.camera)
+            Camera.CapturePreview().environment(vm.camera)
         case .photo(let image):
-            image.resizable().scaledToFill()
+            image.resizable().scaledToFit()
         case .error(let error):
             makeErrorView(error)
         }
@@ -97,7 +96,7 @@ public struct CameraView: View {
                     .buttonStyle(.primary())
             }
         }
-        .padding(.horizontal)
+        .padding([.horizontal, .bottom])
     }
 
     private func makeButton(_ title: String, task: @escaping () async -> Void) -> some View {
@@ -171,42 +170,48 @@ private extension CameraViewState {
     var isCameraDisabled: Bool {
         switch self {
         case .camera:
-            return false
+            false
         default:
-            return true
+            true
         }
     }
 
     var isResetDisabled: Bool {
         switch self {
         case .loading, .unauthorized, .camera:
-            return true
+            true
         default:
-            return false
+            false
         }
     }
 
     var isPhotoReady: Bool {
         switch self {
         case .photo:
-            return true
+            true
         default:
-            return false
+            false
         }
     }
 }
 
 // MARK: - Model
 
-public final class CameraViewModel: ObservableObject {
+@Observable
+public final class CameraViewModel {
+    @ObservationIgnored
     @Dependency(\.camera) var camera
+
+    @ObservationIgnored
     @Dependency(\.disk) var disk
+
+    @ObservationIgnored
     @Dependency(\.haptics) var haptics
 
-    @Published private(set) var state: CameraViewState
+    private(set) var state: CameraViewState
 
     #if os(iOS)
-    @Published public var isFlashEnabled: Bool = false {
+    public var isFlashEnabled: Bool = false {
         didSet {
             if isFlashEnabled != oldValue {
                 haptics.signal(.light)
@@ -214,7 +219,7 @@ public final class CameraViewModel: ObservableObject {
         }
     }
 
-    @Published public var zoomFactor: CGFloat = 1.0 {
+    public var zoomFactor: CGFloat = 1.0 {
         didSet {
             if zoomFactor != oldValue {
                 haptics.signal(.selection)
@@ -238,7 +243,7 @@ public final class CameraViewModel: ObservableObject {
         setupCamera()
     }
 
-    var _skipStart: Bool = false
+    fileprivate var _skipStart: Bool = ProcessInfo.isXcodePreview
 
     // MARK: - API
 
@@ -393,27 +398,22 @@ extension Dependencies {
 
 // MARK: - Previews
 
-struct CameraView_Previews: PreviewProvider {
-    static var previews: some View {
-        make(.camera)
-            .previewDisplayName("Camera")
+#Preview("Camera") {
+    CameraView(vm: .init(.camera))
+}
 
-        make(.photo(Asset.minion.swiftUIImage))
-            .previewDisplayName("Photo")
+#Preview("Photo") {
+    CameraView(vm: .init(.photo(Asset.minion.swiftUIImage)))
+}
 
-        make(.loading)
-            .previewDisplayName("Loading")
+#Preview("Loading") {
+    CameraView(vm: .init(.loading))
+}
 
-        make(.unauthorized)
-            .previewDisplayName("Unauthorized")
+#Preview("Unauthorized") {
+    CameraView(vm: .init(.unauthorized))
+}
 
-        make(.error(CameraError.captureDeviceFailure))
-            .previewDisplayName("Error")
-    }
-
-    static func make(_ state: CameraViewState) -> some View {
-        let vm = CameraViewModel(state)
-        vm._skipStart = true
-        return CameraView(vm: vm)
-    }
+#Preview("Error") {
+    CameraView(vm: .init(.error(CameraError.captureDeviceFailure)))
 }

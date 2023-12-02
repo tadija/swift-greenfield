@@ -3,15 +3,29 @@ import TopLevel
 
 @main
 struct App: SwiftUI.App {
+    private let assembly = Assembly()
+
     var body: some Scene {
         WindowGroup {
-            TopLevel.makeAppView()
+            assembly.appView()
         }
+
+        #if os(macOS)
+        MenuBarExtra("GreenField") {
+            assembly.appMenu()
+        }
+        #endif
     }
 }
 
-struct App_Previews: PreviewProvider {
-    static var previews: some View {
-        TopLevel.makeAppView()
-    }
+// MARK: - Previews
+
+#Preview("App") {
+    Assembly().appView()
 }
+
+#if os(macOS)
+#Preview("Menu") {
+    Assembly().appMenu()
+}
+#endif

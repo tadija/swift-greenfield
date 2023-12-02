@@ -1,7 +1,7 @@
-@testable import Features
+@testable import MenuBar
 import XCTest
 
-final class FeaturesTests: XCTestCase {
+final class MenuBarTests: XCTestCase {
     func testExample() throws {
         XCTAssertTrue(true)
     }

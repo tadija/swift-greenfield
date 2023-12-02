@@ -1,10 +1,13 @@
 SCRIPTS="./Scripts"
 
-BUILD_SETTINGS="gf-build-settings.sh"
+BUILD_SETTINGS="gf-common.sh"
 
 .PHONY: help
 help: ## display help
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
+set-team: ## usage: t=VL46Q749LJ make set-team
+	 @$(SCRIPTS)/$(BUILD_SETTINGS) set "TeamID" $(t)
 
 get-build: ## get current build number
 	 @$(SCRIPTS)/$(BUILD_SETTINGS) get "Build"

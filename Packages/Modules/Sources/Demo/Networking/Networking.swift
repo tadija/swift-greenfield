@@ -7,20 +7,18 @@ import SwiftUI
 public struct NetworkingView: View {
     @Environment(\.openURL) var openURL
 
-    @ObservedObject var vm: NetworkingViewModel
+    @State private var vm: NetworkingViewModel
 
     public init(vm: NetworkingViewModel = .init()) {
-        self.vm = vm
+        _vm = State(initialValue: vm)
     }
 
     public var body: some View {
-        NavigationStack {
-            content
-                .navigationTitle("Networking Demo")
-                .toolbar { ToolbarItem(content: makeToolbarItem) }
-                .task { await vm.load() }
-        }
-        .tint(.semantic(.tintPrimary))
+        content
+            .navigationTitle("Networking")
+            .toolbar { ToolbarItem(content: makeToolbarItem) }
+            .task { await vm.load() }
+            .tint(.semantic(.tintPrimary))
     }
 
     @ViewBuilder
@@ -224,10 +222,12 @@ extension NetworkingViewState.Row {
 
 // MARK: - Model
 
-public final class NetworkingViewModel: ObservableObject {
+@Observable
+public final class NetworkingViewModel {
+    @ObservationIgnored
     @Dependency(\.dataSource) private var dataSource: DataSource
 
-    @Published var state: NetworkingViewState
+    var state: NetworkingViewState
 
     public init(_ state: NetworkingViewState = .init()) {
         self.state = state
@@ -421,17 +421,16 @@ private extension NetworkingViewState.Row {
 
 // MARK: - Previews
 
-struct NetworkingView_Previews: PreviewProvider {
-    static var previews: some View {
-        NetworkingView()
-            .previewDisplayName("Loaded")
+#Preview("Loaded") {
+    NetworkingView()
+}
 
-        NetworkingView(vm: .init(.mockError("preview test error")))
-            .previewDisplayName("Error")
+#Preview("Error") {
+    NetworkingView(vm: .init(.mockError("preview test error")))
+}
 
-        NetworkingView.Row(state: .mock())
-            .debugBorder(.green)
-            .previewLayout(.sizeThatFits)
-            .previewDisplayName("Row")
-    }
+#Preview("Row") {
+    NetworkingView.Row(state: .mock())
+        .debugBorder(.green)
+        .previewLayout(.sizeThatFits)
 }

@@ -164,24 +164,10 @@ public struct ColorsView: View {
     }
 }
 
-struct ColorsView_Previews: PreviewProvider {
-    static var previews: some View {
-        #if os(macOS)
-        macOS
-        #else
-        iOS
-        #endif
-    }
+// MARK: - Previews
 
-    static var macOS: some View {
+#Preview {
+    NavigationStack {
         ColorsView()
-            .previewLayout(.fixed(width: 400, height: 800))
-    }
-
-    static var iOS: some View {
-        NavigationStack {
-            ColorsView()
-        }
-        .previewLayout(.fixed(width: 375, height: 900))
     }
 }

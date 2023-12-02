@@ -1,7 +1,4 @@
-#include "BuildSettings.xcconfig"
-
-// Apple Developer Team ID
-TeamID = VL46Q749LJ
+#include "Common.xcconfig"
 
 // Base Bundle ID
 BaseBundleID = live.GreenField

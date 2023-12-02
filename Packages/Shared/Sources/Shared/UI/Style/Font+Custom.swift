@@ -26,29 +26,29 @@ public extension Font {
     static func custom(_ style: TextStyle) -> Self {
         switch style {
         case .largeTitle:
-            return .custom(.regular, size: 34, relativeTo: style)
+            .custom(.regular, size: 34, relativeTo: style)
         case .title:
-            return .custom(.regular, size: 28, relativeTo: style)
+            .custom(.regular, size: 28, relativeTo: style)
         case .title2:
-            return .custom(.bold, size: 24, relativeTo: style)
+            .custom(.bold, size: 24, relativeTo: style)
         case .title3:
-            return .custom(.light, size: 22, relativeTo: style)
+            .custom(.light, size: 22, relativeTo: style)
         case .headline:
-            return .custom(.bold, size: 20, relativeTo: style)
+            .custom(.bold, size: 20, relativeTo: style)
         case .subheadline:
-            return .custom(.light, size: 18, relativeTo: style)
+            .custom(.light, size: 18, relativeTo: style)
         case .body:
-            return .custom(.regular, size: 17, relativeTo: style)
+            .custom(.regular, size: 17, relativeTo: style)
         case .callout:
-            return .custom(.bold, size: 16, relativeTo: style)
+            .custom(.bold, size: 16, relativeTo: style)
         case .caption:
-            return .custom(.regular, size: 15, relativeTo: style)
+            .custom(.regular, size: 15, relativeTo: style)
         case .caption2:
-            return .custom(.bold, size: 14, relativeTo: style)
+            .custom(.bold, size: 14, relativeTo: style)
         case .footnote:
-            return .custom(.light, size: 13, relativeTo: style)
+            .custom(.light, size: 13, relativeTo: style)
         @unknown default:
-            return .custom(.regular, size: 17, relativeTo: style)
+            .custom(.regular, size: 17, relativeTo: style)
         }
     }
 }
@@ -59,11 +59,11 @@ private extension Font.Custom {
     var font: FontConvertible {
         switch self {
         case .light:
-            return FontFamily.Supreme.light
+            FontFamily.Supreme.light
         case .regular:
-            return FontFamily.Supreme.regular
+            FontFamily.Supreme.regular
         case .bold:
-            return FontFamily.Supreme.bold
+            FontFamily.Supreme.bold
         }
     }
 }
@@ -109,23 +109,8 @@ public struct FontsView: View {
 
 // MARK: - Previews
 
-struct FontsView_Previews: PreviewProvider {
-    static var previews: some View {
-        #if os(macOS)
-        macOS
-        #else
-        iOS
-        #endif
-    }
-
-    static var macOS: some View {
+#Preview {
+    NavigationStack {
         FontsView()
-            .previewLayout(.fixed(width: 400, height: 600))
-    }
-
-    static var iOS: some View {
-        NavigationStack {
-            FontsView()
-        }
     }
 }

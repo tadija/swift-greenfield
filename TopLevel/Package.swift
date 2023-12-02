@@ -1,4 +1,4 @@
-// swift-tools-version: 5.8
+// swift-tools-version: 5.9
 
 import PackageDescription
 
@@ -6,8 +6,8 @@ let package = Package(
     name: "TopLevel",
 
     platforms: [
-        .iOS(.v16),
-        .macOS(.v13),
+        .iOS(.v17),
+        .macOS(.v14),
     ],
 
     products: [
@@ -15,17 +15,14 @@ let package = Package(
     ],
 
     dependencies: [
-        .package(path: "../Packages/Features"),
+        .package(path: "../Packages/Modules"),
     ],
 
     targets: [
-        .target(
-            name: "TopLevel",
-            dependencies: [
-                "Features"
-            ]
-        ),
-
+        .target(name: "TopLevel", dependencies: [
+            .product(name: "Demo", package: "Modules"),
+            .product(name: "MenuBar", package: "Modules"),
+        ]),
         .testTarget(name: "TopLevelTests", dependencies: ["TopLevel"]),
     ]
 )

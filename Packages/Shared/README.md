@@ -1,3 +1,3 @@
 # Shared
 
-This package defines shared logic used by any module in "Features" package.
+This package defines common code and resources reused across features.
