@@ -13,7 +13,9 @@ public struct ContentView: View {
         content
             .environment(navigation)
             .toolbar {
-                toolbarContent()
+                if navigation.showToolbar {
+                    toolbarContent()
+                }
             }
             .tint(.semantic(.tintPrimary))
     }

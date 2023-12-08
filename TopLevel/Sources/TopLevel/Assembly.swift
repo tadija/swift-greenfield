@@ -9,7 +9,7 @@ public final class Assembly {
     public init() {}
 
     private lazy var demo = Demo.Navigation(routes: [
-        .hello, .debug, .camera, .disk, .networking
+        .hello, .debug, .files, .camera, .trending, .chat
     ])
 
 }
@@ -35,27 +35,26 @@ extension Assembly {
 
     private func demoItems() -> [MenuBarItem] {
         var items = [MenuBarItem]()
-        items.append(
-            contentsOf: Demo.Route.allCases.map { route in
-                menuItem(for: route)
+
+        items.append(contentsOf: Demo.Route.allCases.map { route in
+            .init(title: route.title) {
+                let windowSize = CGSize(width: 400, height: 600)
+                NSWindow.open(route.title, size: windowSize) {
+                    NavigationStack {
+                        route.makeDestination()
+                    }
+                }
             }
-        )
-        items.append(.init(title: "Content", action: {
-            NSWindow.open {
+        })
+
+        let title = "Content"
+        items.append(.init(title: title, action: {
+            NSWindow.open(title) {
                 Demo.ContentView()
             }
         }))
-        return items
-    }
 
-    private func menuItem(for route: Demo.Route) -> MenuBarItem {
-        .init(title: route.title) {
-            NSWindow.open(size: CGSize(width: 400, height: 600)) {
-                NavigationStack {
-                    route.makeDestination()
-                }
-            }
-        }
+        return items
     }
 }
 

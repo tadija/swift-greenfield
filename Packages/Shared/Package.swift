@@ -27,8 +27,7 @@ let package = Package(
                 .product(name: "Minions", package: "swift-minions")
             ],
             resources: [
-                .process("Resources/Fonts"),
-                .copy("Resources/Assets.xcassets"),
+                .process("Resources"),
             ],
             swiftSettings: [
                 .unsafeFlags(["-Xfrontend", "-application-extension"])

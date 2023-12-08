@@ -6,7 +6,7 @@ public struct HelloView: View {
     public init() {}
 
     public var body: some View {
-        content.navigationTitle("Hello")
+        content.navigationTitle(Route.hello.title)
     }
 
     private var content: some View {

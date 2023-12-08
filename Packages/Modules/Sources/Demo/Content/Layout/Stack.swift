@@ -21,15 +21,8 @@ public struct StackView: View {
         ScrollView {
             LazyVGrid(columns: columns) {
                 ForEach(navigation.routes, id: \.self) { route in
-                    Button(action: {
-                        navigation.stackPath.append(route)
-                    }, label: {
-                        route.makeLabel()
-                            .labelStyle(.vertical())
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .aspectRatio(1, contentMode: .fill)
-                    })
-                    .buttonStyle(.bordered)
+                    Item(route: route)
+                        .environment(navigation)
                 }
             }
         }
@@ -37,6 +30,34 @@ public struct StackView: View {
 
     private var columns: [GridItem] {
         Array(repeating: GridItem(.flexible()), count: 3)
+    }
+
+    private struct Item: View {
+        @Environment(Navigation.self) private var navigation
+
+        let route: Route
+
+        var body: some View {
+            Button(action: {
+                navigation.stackPath.append(route)
+            }, label: {
+                route.makeLabel()
+                    .labelStyle(.vertical())
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .aspectRatio(1, contentMode: .fill)
+            })
+            .onHover { _ in
+                hovered.toggle()
+            }
+            .if(!hovered) { btn in
+                btn.buttonStyle(.bordered)
+            }
+            .if(hovered) { btn in
+                btn.buttonStyle(.borderedProminent)
+            }
+        }
+
+        @State private var hovered = false
     }
 }
 

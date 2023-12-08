@@ -4,18 +4,18 @@ import SwiftUI
 
 // MARK: - View
 
-public struct NetworkingView: View {
+public struct TrendingView: View {
     @Environment(\.openURL) var openURL
 
-    @State private var vm: NetworkingViewModel
+    @State private var vm: TrendingViewModel
 
-    public init(vm: NetworkingViewModel = .init()) {
+    public init(vm: TrendingViewModel = .init()) {
         _vm = State(initialValue: vm)
     }
 
     public var body: some View {
         content
-            .navigationTitle("Networking")
+            .navigationTitle(Route.trending.title)
             .toolbar { ToolbarItem(content: makeToolbarItem) }
             .task { await vm.load() }
             .tint(.semantic(.tintPrimary))
@@ -26,19 +26,18 @@ public struct NetworkingView: View {
         if vm.state.isLoading {
             ProgressView().tint(.semantic(.contentSecondary))
         } else {
-            #if os(iOS)
-            Button(action: {
-                Task { await vm.load() }
-            }, label: {
-                Image(systemName: "arrow.clockwise")
-            })
-            #endif
+            Picker("Language", selection: $vm.state.language) {
+                ForEach(vm.languages, id: \.self) { language in
+                    Text(language.capitalized)
+                }
+            }
+            .pickerStyle(.menu)
         }
     }
 
     @ViewBuilder
     private var content: some View {
-        makeList(vm.state.rows)
+        makeList(vm.state.items)
             .alert(
                 "Oops, something went wrong.",
                 isPresented: $vm.state.error.isNotNil(),
@@ -57,11 +56,11 @@ public struct NetworkingView: View {
 
     @State private var presentedURL: URL?
 
-    private func makeList(_ rows: [NetworkingViewState.Row]) -> some View {
+    private func makeList(_ items: [TrendingViewState.Item]) -> some View {
         List {
-            ForEach(rows.indices, id: \.self) { i in
+            ForEach(items.indices, id: \.self) { i in
                 Button(action: {
-                    if let url = rows[i].url {
+                    if let url = items[i].url {
                         #if os(iOS)
                         presentedURL = url
                         #else
@@ -69,11 +68,11 @@ public struct NetworkingView: View {
                         #endif
                     }
                 }, label: {
-                    Row(state: rows[i])
+                    Row(item: items[i])
                 })
                 .buttonStyle(.plain)
                 .listRowInsets(EdgeInsets())
-                .listRowBackground(rowColor(i, rowsCount: rows.count))
+                .listRowBackground(rowColor(i, rowsCount: items.count))
             }
         }
         #if os(iOS)
@@ -99,7 +98,7 @@ public struct NetworkingView: View {
     }
 
     struct Row: View {
-        var state: NetworkingViewState.Row
+        var item: TrendingViewState.Item
 
         var body: some View {
             VStack(alignment: .leading) {
@@ -112,12 +111,12 @@ public struct NetworkingView: View {
 
         private var header: some View {
             HStack {
-                Text(state.ownerUsername)
+                Text(item.ownerUsername)
                     .font(.custom(.callout))
 
                 Spacer()
 
-                Text(state.repoUpdateDate)
+                Text(item.repoUpdateDate)
                     .font(.custom(.caption))
                     .foregroundColor(.secondary)
             }
@@ -128,10 +127,10 @@ public struct NetworkingView: View {
                 ownerImage
 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(state.repoName)
+                    Text(item.repoName)
                         .font(.custom(.headline))
 
-                    if let repoDescription = state.repoDescription {
+                    if let repoDescription = item.repoDescription {
                         Text(repoDescription)
                             .font(.custom(.body))
                             .lineLimit(3)
@@ -143,7 +142,7 @@ public struct NetworkingView: View {
         }
 
         private var ownerImage: some View {
-            AsyncImage(url: state.ownerImageURL) { image in
+            AsyncImage(url: item.ownerImageURL) { image in
                 image.resizable().scaledToFill()
             } placeholder: {
                 Image(systemName: "photo")
@@ -154,8 +153,8 @@ public struct NetworkingView: View {
 
         private var counters: some View {
             HStack {
-                Text("⋔ \(state.forksCount)")
-                Text("★ \(state.starsCount)")
+                Text("⋔ \(item.forksCount)")
+                Text("★ \(item.starsCount)")
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
             .foregroundColor(.secondary)
@@ -166,14 +165,15 @@ public struct NetworkingView: View {
 
 // MARK: - State
 
-public struct NetworkingViewState {
+public struct TrendingViewState {
     public init() {}
 
     public var isLoading: Bool = false
-    public var rows: [Row] = []
+    public var language: String = "swift"
+    public var items: [Item] = []
     public var error: Error?
 
-    public struct Row: Identifiable {
+    public struct Item: Identifiable {
         public var id: Int
         public var url: URL?
         public var ownerImageURL: URL?
@@ -186,15 +186,15 @@ public struct NetworkingViewState {
     }
 }
 
-extension NetworkingViewState {
+extension TrendingViewState {
     static func mockError(_ error: Error) -> Self {
-        var state = NetworkingViewState()
+        var state = TrendingViewState()
         state.error = error
         return state
     }
 }
 
-extension NetworkingViewState.Row {
+extension TrendingViewState.Item {
     static func mock(
         id: Int = UUID().hashValue,
         url: URL? = "https://github.com/tadija/swift-greenfield",
@@ -223,25 +223,38 @@ extension NetworkingViewState.Row {
 // MARK: - Model
 
 @Observable
-public final class NetworkingViewModel {
+public final class TrendingViewModel {
     @ObservationIgnored
-    @Dependency(\.dataSource) private var dataSource: DataSource
+    @Dependency(\.api) private var api: API
 
-    var state: NetworkingViewState
+    var state: TrendingViewState {
+        didSet {
+            if state.language != oldValue.language {
+                Task {
+                    await load()
+                }
+            }
+        }
+    }
 
-    public init(_ state: NetworkingViewState = .init()) {
+    public init(_ state: TrendingViewState = .init()) {
         self.state = state
     }
 
     // MARK: API
+
+    var languages: [String] = [
+        "swift", "objective-c", "bash", "c++", "c#", "rust",
+        "kotlin", "java", "php", "ruby", "python", "html", "css"
+    ]
 
     @Sendable
     func load() async {
         await MainActor.run { state.isLoading = true }
 
         do {
-            let rows = try await dataSource.fetch()
-            await updateState(to: .success(rows))
+            let items = try await api.fetch(state.language)
+            await updateState(to: .success(items))
         } catch {
             if (error as NSError).code == -999 {
                 logWrite("loading task cancelled")
@@ -255,11 +268,11 @@ public final class NetworkingViewModel {
     // MARK: Helpers
 
     @MainActor
-    private func updateState(to result: Result<[NetworkingViewState.Row], Error>) {
+    private func updateState(to result: Result<[TrendingViewState.Item], Error>) {
         defer { state.isLoading = false }
         switch result {
-        case .success(let rows):
-            state.rows = rows
+        case .success(let items):
+            state.items = items
         case .failure(let error):
             state.error = error
         }
@@ -268,18 +281,18 @@ public final class NetworkingViewModel {
 
 // MARK: - Factory
 
-private struct DataSource {
-    var fetch: () async throws -> [NetworkingViewState.Row]
+private struct API {
+    var fetch: (String) async throws -> [TrendingViewState.Item]
 }
 
-extension DataSource: DependencyKey {
-    static var liveValue: Self = .init(fetch: {
+extension API: DependencyKey {
+    static var liveValue: Self = .init(fetch: { language in
         try await GithubAPI()
-            .fetchTrendingSwiftRepos().items
-            .map { NetworkingViewState.Row($0) }
+            .fetchTrendingRepos(for: language).items
+            .map { TrendingViewState.Item($0) }
     })
 
-    static var previewValue: Self = .init(fetch: {
+    static var previewValue: Self = .init(fetch: { _ in
         [.mock(), .mock(), .mock()]
     })
 
@@ -287,9 +300,9 @@ extension DataSource: DependencyKey {
 }
 
 extension Dependencies {
-    fileprivate var dataSource: DataSource {
-        get { Self[DataSource.self] }
-        set { Self[DataSource.self] = newValue }
+    fileprivate var api: API {
+        get { Self[API.self] }
+        set { Self[API.self] = newValue }
     }
 }
 
@@ -298,8 +311,11 @@ extension Dependencies {
 private struct GithubAPI {
     let github = RestAPI("https://api.github.com")
 
-    func fetchTrendingSwiftRepos() async throws -> Response {
-        let request = TrendingSwiftRepos(minPushDate: lastWeekDate)
+    func fetchTrendingRepos(for language: String) async throws -> Response {
+        let request = TrendingRepos(
+            language: language,
+            minPushDate: lastWeekDate
+        )
 
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
@@ -322,7 +338,7 @@ private struct GithubAPI {
 
 // MARK: - API Request
 
-private struct TrendingSwiftRepos: RestAPIRequest {
+private struct TrendingRepos: RestAPIRequest {
     var method: URLRequest.Method {
         .get
     }
@@ -333,12 +349,13 @@ private struct TrendingSwiftRepos: RestAPIRequest {
 
     var urlParameters: [String: Any]? {
         var result = [String: Any]()
-        result["q"] = "pushed:>=\(minPushDate) language:swift"
+        result["q"] = "pushed:>=\(minPushDate) language:\(language)"
         result["sort"] = "stars"
         result["order"] = "desc"
         return result
     }
 
+    var language: String
     var minPushDate: String
 }
 
@@ -405,7 +422,7 @@ extension Response.Repo {
     }()
 }
 
-private extension NetworkingViewState.Row {
+private extension TrendingViewState.Item {
     init(_ repo: Response.Repo) {
         id = repo.id
         url = URL(string: repo.url)
@@ -422,15 +439,15 @@ private extension NetworkingViewState.Row {
 // MARK: - Previews
 
 #Preview("Loaded") {
-    NetworkingView()
+    TrendingView()
 }
 
 #Preview("Error") {
-    NetworkingView(vm: .init(.mockError("preview test error")))
+    TrendingView(vm: .init(.mockError("preview test error")))
 }
 
 #Preview("Row") {
-    NetworkingView.Row(state: .mock())
+    TrendingView.Row(item: .mock())
         .debugBorder(.green)
         .previewLayout(.sizeThatFits)
 }

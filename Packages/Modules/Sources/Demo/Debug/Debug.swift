@@ -7,7 +7,7 @@ public struct DebugView: View {
 
     public var body: some View {
         content
-            .navigationTitle("Debug")
+            .navigationTitle(Demo.Route.debug.title)
             .navigationDestination(for: Route.self) { route in
                 route.makeDestination()
             }

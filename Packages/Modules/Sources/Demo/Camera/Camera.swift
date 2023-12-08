@@ -13,7 +13,7 @@ public struct CameraView: View {
 
     public var body: some View {
         content
-            .navigationTitle("Camera")
+            .navigationTitle(Route.camera.title)
             .onAppear { Task { await vm.startCamera() } }
             .onDisappear { Task { await vm.stopCamera() } }
     }
@@ -49,7 +49,7 @@ public struct CameraView: View {
             ProgressView().tint(.semantic(.contentSecondary))
         case .unauthorized:
             makeUnauthorizedView()
-        case .camera:
+        case .camera, .capturing:
             Camera.CapturePreview().environment(vm.camera)
         case .photo(let image):
             image.resizable().scaledToFit()
@@ -81,27 +81,62 @@ public struct CameraView: View {
             .padding()
     }
 
+    @ViewBuilder
     private var mainControls: some View {
-        HStack {
-            makeButton("RESET", task: vm.switchToCamera)
-                .disabled(vm.state.isResetDisabled)
-                .buttonStyle(.tertiary())
+        let capture = makeButton("CAPTURE", task: vm.startCountdown)
+            .disabled(vm.state.isCameraDisabled)
+            .buttonStyle(.primary())
 
-            if vm.state.isPhotoReady {
-                makeButton("SAVE", task: vm.saveLastPhotoToDisk)
-                    .buttonStyle(.secondary())
-            } else {
-                makeButton("CAPTURE", task: vm.takePhoto)
-                    .disabled(vm.state.isCameraDisabled)
-                    .buttonStyle(.primary())
+        let countdown = CountdownView()
+            .environment(vm)
+
+        let reset = makeButton("RESET", task: vm.switchToCamera)
+            .buttonStyle(.tertiary())
+
+        let save = makeButton("SAVE", task: vm.saveLastPhotoToDisk)
+            .buttonStyle(.secondary())
+
+        HStack {
+            switch vm.state {
+            case .loading, .unauthorized, .camera:
+                capture
+            case .capturing:
+                countdown
+            case .photo:
+                reset
+                save
+            case .error:
+                reset
             }
         }
         .padding([.horizontal, .bottom])
+        .frame(height: 64)
     }
 
     private func makeButton(_ title: String, task: @escaping () async -> Void) -> some View {
         Button(title) {
             Task { await task() }
+        }
+    }
+
+    struct CountdownView: View {
+        @Environment(CameraViewModel.self) private var vm
+
+        private let dimmed: CGFloat = 0.3
+
+        var body: some View {
+            HStack(spacing: 40) {
+                Text("3")
+                    .opacity(vm.countdown == 3 ? 1 : dimmed)
+                Text("2")
+                    .opacity(vm.countdown == 2 ? 1 : dimmed)
+                Text("1")
+                    .opacity(vm.countdown == 1 ? 1 : dimmed)
+
+                Image(systemName: "camera.circle.fill")
+                    .opacity(vm.countdown == nil ? 1 : dimmed)
+            }
+            .font(.custom(.title))
         }
     }
 
@@ -162,6 +197,7 @@ public enum CameraViewState {
     case loading
     case unauthorized
     case camera
+    case capturing
     case photo(Image)
     case error(Error)
 }
@@ -173,24 +209,6 @@ private extension CameraViewState {
             false
         default:
             true
-        }
-    }
-
-    var isResetDisabled: Bool {
-        switch self {
-        case .loading, .unauthorized, .camera:
-            true
-        default:
-            false
-        }
-    }
-
-    var isPhotoReady: Bool {
-        switch self {
-        case .photo:
-            true
-        default:
-            false
         }
     }
 }
@@ -206,9 +224,20 @@ public final class CameraViewModel {
     @Dependency(\.disk) var disk
 
     @ObservationIgnored
+    @Dependency(\.sound) var sound
+
+    @ObservationIgnored
     @Dependency(\.haptics) var haptics
 
     private(set) var state: CameraViewState
+
+    var countdown: Int? {
+        didSet {
+            if let countdown, countdown > 0 {
+                playSound("beep")
+            }
+        }
+    }
 
     #if os(iOS)
     public var isFlashEnabled: Bool = false {
@@ -289,11 +318,42 @@ public final class CameraViewModel {
         #endif
     }
 
+    func startCountdown() async {
+        await updateState(to: .capturing)
+        await MainActor.run {
+            countdown = 3
+            countdownTimer = .scheduledTimer(
+                withTimeInterval: 1,
+                repeats: true
+            ) { [weak self] _ in
+                self?.countdownTimerTick()
+            }
+        }
+    }
+
+    @ObservationIgnored
+    private var countdownTimer: Timer?
+
+    private func countdownTimerTick() {
+        countdown? -= 1
+
+        if countdown == 0 {
+            countdown = nil
+            countdownTimer?.invalidate()
+
+            Task {
+                haptics.signal(.medium)
+                playSound("shutter")
+                try await Task.sleep(for: .milliseconds(200))
+                await takePhoto()
+            }
+        }
+    }
+
     public func takePhoto() async {
         #if targetEnvironment(simulator)
         await updateState(to: .photo(Asset.minion.swiftUIImage))
         #else
-        haptics.signal(.medium)
         await updateState(to: .loading)
         do {
             let settings = try makePhotoSettings()
@@ -342,6 +402,11 @@ public final class CameraViewModel {
         camera.customSessionConfiguration = { session in
             session.sessionPreset = .photo
         }
+    }
+
+    private func playSound(_ name: String) {
+        let resource = Resource(name: "camera-\(name)", type: "mp3")
+        sound.play(fromPath: resource.path)
     }
 
     private func makePhotoSettings() throws -> AVCapturePhotoSettings {
@@ -400,6 +465,12 @@ extension Dependencies {
 
 #Preview("Camera") {
     CameraView(vm: .init(.camera))
+}
+
+#Preview("Capturing") {
+    let vm = CameraViewModel(.capturing)
+    vm.countdown = 3
+    return CameraView(vm: vm)
 }
 
 #Preview("Photo") {

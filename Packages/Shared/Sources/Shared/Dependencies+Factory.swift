@@ -54,6 +54,19 @@ extension Dependencies {
     }
 }
 
+// MARK: - Disk
+
+extension Disk: DependencyKey {
+    public static var liveValue = Disk()
+}
+
+extension Dependencies {
+    public var disk: Disk {
+        get { Self[Disk.self] }
+        set { Self[Disk.self] = newValue }
+    }
+}
+
 // MARK: - Haptics
 
 extension Haptics: DependencyKey {
@@ -67,15 +80,15 @@ extension Dependencies {
     }
 }
 
-// MARK: - Disk
+// MARK: - Sound
 
-extension Disk: DependencyKey {
-    public static var liveValue = Disk()
+extension Sound: DependencyKey {
+    public static var liveValue = Sound()
 }
 
 extension Dependencies {
-    public var disk: Disk {
-        get { Self[Disk.self] }
-        set { Self[Disk.self] = newValue }
+    public var sound: Sound {
+        get { Self[Sound.self] }
+        set { Self[Sound.self] = newValue }
     }
 }

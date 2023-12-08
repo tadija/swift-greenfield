@@ -2,17 +2,17 @@ import Minions
 import Shared
 import SwiftUI
 
-public struct DiskView: View {
+public struct FilesView: View {
 
-    @State private var vm: DiskViewModel
+    @State private var vm: FilesViewModel
 
-    public init(vm: DiskViewModel = .init()) {
+    public init(vm: FilesViewModel = .init()) {
         self.vm = vm
     }
 
     public var body: some View {
         content
-            .navigationTitle("Disk")
+            .navigationTitle(Route.files.title)
             .toolbar { ToolbarItem(content: makeToolbarItem) }
             .sheet(isPresented: $vm.state.error.isNotNil()) {
                 if let error = vm.state.error {
@@ -28,9 +28,10 @@ public struct DiskView: View {
     @ViewBuilder
     private var content: some View {
         if vm.state.content.isEmpty {
-            Text(vm.state.emptyContentText)
-                .font(.custom(.title3))
-                .foregroundColor(.semantic(.contentSecondary))
+            ContentUnavailableView(
+                vm.state.emptyContentText,
+                systemImage: "folder"
+            )
         } else {
             ImageList()
                 .environment(vm)
@@ -49,7 +50,7 @@ public struct DiskView: View {
     }
 
     private struct ImageList: View {
-        @Environment(DiskViewModel.self) private var vm: DiskViewModel
+        @Environment(FilesViewModel.self) private var vm: FilesViewModel
 
         var body: some View {
             List {
@@ -84,7 +85,7 @@ public struct DiskView: View {
     }
 
     private struct ImageRow: View {
-        @Environment(DiskViewModel.self) private var vm: DiskViewModel
+        @Environment(FilesViewModel.self) private var vm: FilesViewModel
 
         var url: URL
 
@@ -127,7 +128,7 @@ public struct DiskView: View {
     }
 
     private struct ImageView: View {
-        @Environment(DiskViewModel.self) private var vm: DiskViewModel
+        @Environment(FilesViewModel.self) private var vm: FilesViewModel
 
         var imageURL: URL
 
@@ -157,7 +158,7 @@ public struct DiskView: View {
     }
 
     private struct ErrorView: View {
-        @Environment(DiskViewModel.self) private var vm: DiskViewModel
+        @Environment(FilesViewModel.self) private var vm: FilesViewModel
 
         var error: Error
 
@@ -188,7 +189,7 @@ public struct DiskView: View {
 
 // MARK: - State
 
-public struct DiskViewState {
+public struct FilesViewState {
     public init() {}
 
     public var isLoading: Bool = false
@@ -208,7 +209,7 @@ public struct DiskViewState {
     }
 }
 
-public extension DiskViewState {
+public extension FilesViewState {
     mutating func switchToLoading() {
         error = nil
         isLoading = true
@@ -226,21 +227,21 @@ public extension DiskViewState {
     }
 }
 
-extension DiskViewState {
+extension FilesViewState {
     static func mockLoading() -> Self {
-        var state = DiskViewState()
+        var state = FilesViewState()
         state.switchToLoading()
         return state
     }
 
     static func mockContent(_ content: [URL]) -> Self {
-        var state = DiskViewState()
+        var state = FilesViewState()
         state.switchToContent(content)
         return state
     }
 
     static func mockError(_ error: Error) -> Self {
-        var state = DiskViewState()
+        var state = FilesViewState()
         state.switchToError(error)
         return state
     }
@@ -249,13 +250,13 @@ extension DiskViewState {
 // MARK: - Model
 
 @Observable
-public final class DiskViewModel {
+public final class FilesViewModel {
     @ObservationIgnored
     @Dependency(\.dataSource) private var dataSource
 
-    var state: DiskViewState
+    var state: FilesViewState
 
-    public init(_ state: DiskViewState = .init()) {
+    public init(_ state: FilesViewState = .init()) {
         self.state = state
     }
 
@@ -418,18 +419,18 @@ extension Dependencies {
 
 #Preview("Content") {
     NavigationStack {
-        DiskView(vm: .init(.mockContent(DataSource.mockURLS())))
+        FilesView(vm: .init(.mockContent(DataSource.mockURLS())))
     }
 }
 
 #Preview("Empty") {
-    DiskView(vm: .init(.mockContent([])))
+    FilesView(vm: .init(.mockContent([])))
 }
 
 #Preview("Loading") {
-    DiskView(vm: .init(.mockLoading()))
+    FilesView(vm: .init(.mockLoading()))
 }
 
 #Preview("Error") {
-    DiskView(vm: .init(.mockError("preview test error")))
+    FilesView(vm: .init(.mockError("preview test error")))
 }

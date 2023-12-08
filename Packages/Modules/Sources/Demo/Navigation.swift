@@ -1,3 +1,4 @@
+import Minions
 import SwiftUI
 
 @Observable
@@ -5,17 +6,35 @@ public final class Navigation {
 
     public enum Layout: String, CaseIterable {
         case tabs, stack, split
+
+        @DefaultsRaw(key: "Demo.Navigation.Layout")
+        public static var `default`: Layout = .tabs
     }
 
-    public var layout: Layout
+    public var layout: Layout {
+        didSet {
+            if layout != oldValue {
+                Layout.default = layout
+            }
+        }
+    }
+
     public var routes: [Route]
 
-    var tabSelection: Route?
+    var tabSelection: Route? {
+        didSet {
+            if tabSelection == oldValue {
+                tabSelection = nil
+            }
+        }
+    }
+
     var stackPath: NavigationPath = .init()
+
     var splitSelection: Route?
 
     public init(
-        layout: Layout = .tabs,
+        layout: Layout = .default,
         routes: [Route] = Route.allCases
     ) {
         self.layout = layout
@@ -30,72 +49,19 @@ public final class Navigation {
         }
     }
 
-}
-
-// MARK: - Routes
-
-public enum Route: Hashable, CaseIterable {
-    case hello
-    case debug
-    case camera
-    case disk
-    case networking
-}
-
-// MARK: - Label
-
-public extension Route {
-    var title: String {
-        switch self {
-        case .hello:
-            "Hello"
-        case .debug:
-            "Debug"
-        case .camera:
-            "Camera"
-        case .disk:
-            "Disk"
-        case .networking:
-            "Networking"
+    public var showToolbar: Bool {
+        #if os(iOS)
+        switch layout {
+        case .tabs:
+            tabSelection == nil
+        case .stack:
+            stackPath.isEmpty
+        case .split:
+            splitSelection == nil
         }
+        #else
+        return true
+        #endif
     }
 
-    var symbol: String {
-        switch self {
-        case .hello:
-            "hand.wave"
-        case .debug:
-            "gear"
-        case .camera:
-            "camera"
-        case .disk:
-            "internaldrive"
-        case .networking:
-            "network"
-        }
-    }
-}
-
-// MARK: - Factory
-
-public extension Route {
-    func makeLabel() -> some View {
-        Label(title, systemImage: symbol)
-    }
-
-    @ViewBuilder
-    func makeDestination() -> some View {
-        switch self {
-        case .hello:
-            HelloView()
-        case .debug:
-            DebugView()
-        case .camera:
-            CameraView()
-        case .disk:
-            DiskView()
-        case .networking:
-            NetworkingView()
-        }
-    }
 }
