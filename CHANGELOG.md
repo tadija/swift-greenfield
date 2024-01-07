@@ -1,5 +1,12 @@
 # Release Notes
 
+## 0.2.2
+
+- Update for Xcode 15.1
+- Bump deployment targets 
+- Demo package improvements
+- Add new demo: "Chat"
+
 ## 0.2.1
 
 - Rename / reorganize files

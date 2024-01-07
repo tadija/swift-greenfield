@@ -473,7 +473,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# skip running during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n# skip running during preview builds\nif [ $ENABLE_PREVIEWS = \"YES\" ]; then exit 0; fi\n\nARTIFACT_BUNDLE=\"$BUILD_DIR/../../SourcePackages/artifacts/tools/SwiftFormatBinary/swiftformat.artifactbundle\"\nTOOL=\"$ARTIFACT_BUNDLE/swiftformat-0.52.10-macos/bin/swiftformat\"\n\n$TOOL \"$PROJECT_DIR\" --config \"$PROJECT_DIR/.swiftformat\"\n";
+			shellScript = "# skip running during install builds\nif [ $ACTION = \"install\" ]; then exit 0; fi\n# skip running during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n# skip running during preview builds\nif [ $ENABLE_PREVIEWS = \"YES\" ]; then exit 0; fi\n\nARTIFACT_BUNDLE=\"$BUILD_DIR/../../SourcePackages/artifacts/tools/SwiftFormatBinary/swiftformat.artifactbundle\"\nTOOL=\"$ARTIFACT_BUNDLE/swiftformat-0.52.10-macos/bin/swiftformat\"\n\n$TOOL \"$PROJECT_DIR\" --config \"$PROJECT_DIR/.swiftformat\"\n";
 		};
 		8BC3BB9529F090940028B630 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -492,7 +492,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# skip running during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n# skip running during preview builds\nif [ $ENABLE_PREVIEWS = \"YES\" ]; then exit 0; fi\n\nARTIFACT_BUNDLE=\"$BUILD_DIR/../../SourcePackages/artifacts/tools/SwiftLintBinary/SwiftLintBinary.artifactbundle\"\nTOOL=\"$ARTIFACT_BUNDLE/swiftlint-0.54.0-macos/bin/swiftlint\"\n\n$TOOL \"$PROJECT_DIR\" --config \"$PROJECT_DIR/.swiftlint.yml\"\n";
+			shellScript = "# skip running during install builds\nif [ $ACTION = \"install\" ]; then exit 0; fi\n# skip running during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n# skip running during preview builds\nif [ $ENABLE_PREVIEWS = \"YES\" ]; then exit 0; fi\n\nARTIFACT_BUNDLE=\"$BUILD_DIR/../../SourcePackages/artifacts/tools/SwiftLintBinary/SwiftLintBinary.artifactbundle\"\nTOOL=\"$ARTIFACT_BUNDLE/swiftlint-0.54.0-macos/bin/swiftlint\"\n\n$TOOL \"$PROJECT_DIR\" --config \"$PROJECT_DIR/.swiftlint.yml\"\n";
 		};
 		8BCE33E729E4BABE00C550A0 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -511,7 +511,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# skip running during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n# skip running during preview builds\nif [ $ENABLE_PREVIEWS = \"YES\" ]; then exit 0; fi\n\nARTIFACT_BUNDLE=\"$BUILD_DIR/../../SourcePackages/artifacts/tools/SwiftGenBinary/swiftgen.artifactbundle\"\nTOOL=\"$ARTIFACT_BUNDLE/swiftgen/bin/swiftgen\"\n\n$TOOL config run --config \"$PROJECT_DIR/.swiftgen.yml\"\n";
+			shellScript = "# skip running during install builds\nif [ $ACTION = \"install\" ]; then exit 0; fi\n# skip running during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n# skip running during preview builds\nif [ $ENABLE_PREVIEWS = \"YES\" ]; then exit 0; fi\n\nARTIFACT_BUNDLE=\"$BUILD_DIR/../../SourcePackages/artifacts/tools/SwiftGenBinary/swiftgen.artifactbundle\"\nTOOL=\"$ARTIFACT_BUNDLE/swiftgen/bin/swiftgen\"\n\n$TOOL config run --config \"$PROJECT_DIR/.swiftgen.yml\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
